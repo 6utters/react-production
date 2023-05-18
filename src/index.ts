@@ -1,3 +1,3 @@
 import {testFn} from "./test";
 
-testFn()
+testFn(123)
