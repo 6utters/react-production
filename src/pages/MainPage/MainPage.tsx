@@ -1,9 +1,11 @@
 import {FC} from 'react';
 
-export const MainPage: FC = () => {
+const MainPage: FC = () => {
     return (
         <div>
             MainPage
         </div>
     );
 };
+
+export default MainPage

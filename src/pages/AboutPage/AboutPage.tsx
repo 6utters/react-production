@@ -1,9 +1,11 @@
 import {FC} from 'react';
 
-export const AboutPage: FC = () => {
+const AboutPage: FC = () => {
     return (
         <div>
             AboutPage
         </div>
     );
 };
+
+export default AboutPage
