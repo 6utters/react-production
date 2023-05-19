@@ -1,4 +1,5 @@
 import {FC, useState} from 'react';
+import './Component.scss'
 
 export const Component: FC = () => {
     const [counter, setCounter] = useState(0);
