@@ -6,7 +6,6 @@ const MainPage: FC = () => {
 
     return (
         <div>
-            {t('новый ')}
             {t('Главная страница')}
         </div>
     );
