@@ -20,6 +20,7 @@
     }
   },
   "include": [
+    "./src/**/*.{ts|tsx}",
     "./config/jest/setupTests.ts"
   ]
 }
