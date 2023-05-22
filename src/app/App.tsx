@@ -8,6 +8,7 @@ import './styles/index.scss'
 
 export const App: FC = () => {
   const { theme } = useTheme()
+
   return (
     <div className={classNames('app', {}, [theme])}>
       <Suspense fallback="">
