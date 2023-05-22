@@ -10,6 +10,12 @@
   width: var(--sidebar-width-collapsed);
 }
 
+.collapsed_btn {
+  position: absolute;
+  right: -32px;
+  bottom: 32px;
+}
+
 .switchers {
   position: absolute;
   width: 100%;

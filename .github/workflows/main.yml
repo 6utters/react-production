@@ -1,7 +1,7 @@
 name: linting, testing, building
 on:
   push:
-    branches: [ master, webpack, project-logic, environment ]
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 jobs:
