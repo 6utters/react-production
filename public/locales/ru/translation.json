@@ -12,5 +12,7 @@
   "Войти": "Войти",
   "Добавить": "Добавить",
   "Вычесть": "Вычесть",
-  "Текст": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, vitae!"
+  "Текст": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, vitae!",
+  "Введите username": "Введите username",
+  "Введите пароль": "Введите пароль"
 }

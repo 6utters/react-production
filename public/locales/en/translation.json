@@ -12,5 +12,7 @@
   "Войти": "Log in",
   "Добавить": "Increment",
   "Вычесть": "Decrement",
-  "Текст": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, vitae!"
+  "Текст": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, vitae!",
+  "Введите username": "Enter username",
+  "Введите пароль": "Enter password"
 }
