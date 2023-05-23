@@ -27,7 +27,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
         {t('Войти')}
       </Button>
       <Modal isOpen={isAuthModal} onClose={onToggleModal}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, vitae!
+        {t('Текст')}
       </Modal>
     </div>
   )
