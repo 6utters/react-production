@@ -14,5 +14,8 @@
   "Вычесть": "Decrement",
   "Текст": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, vitae!",
   "Введите username": "Enter username",
-  "Введите пароль": "Enter password"
+  "Введите пароль": "Enter password",
+  "Форма авторизации": "Login form",
+  "Вы ввели неверный логин или пароль": "Invalid email of password",
+  "Выйти": "Log out"
 }

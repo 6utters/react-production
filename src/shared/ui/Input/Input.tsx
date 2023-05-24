@@ -13,7 +13,7 @@ interface InputProps extends HTMLInputProps {
     autofocus?: boolean
 }
 
-export const Input = memo((props: InputProps) => {
+export const Input: FC<InputProps> = memo((props) => {
   const {
     className, value, onChange, autofocus, type = 'text', placeholder, ...otherProps
   } = props
