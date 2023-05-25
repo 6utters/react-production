@@ -9,6 +9,7 @@
   "Прокинуть ошибку": "Throw error",
   "Главная": "Main",
   "О сайте": "About us",
+  "Профиль": "Profile",
   "Войти": "Log in",
   "Добавить": "Increment",
   "Вычесть": "Decrement",
@@ -17,5 +18,6 @@
   "Введите пароль": "Enter password",
   "Форма авторизации": "Login form",
   "Вы ввели неверный логин или пароль": "Invalid email of password",
-  "Выйти": "Log out"
+  "Выйти": "Log out",
+  "Страница профиля": "Profile Page"
 }
