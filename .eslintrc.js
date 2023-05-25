@@ -55,7 +55,8 @@ module.exports = {
     'react/jsx-no-useless-fragment': 'off'
   },
   globals: {
-    __IS_DEV__: true
+    __IS_DEV__: true,
+    __API__: true
   },
   overrides: [{
     files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
