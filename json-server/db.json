@@ -1,16 +1,14 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server 1", "author": "typicode" },
-    { "id": 1, "title": "json-server 2", "author": "typicode" },
-    { "id": 1, "title": "json-server 3", "author": "typicode" },
-    { "id": 1, "title": "json-server 4", "author": "typicode" }
+    { "id": "1", "title": "json-server 1", "userId": "1" },
+    { "id": "2", "title": "json-server 2", "userId": "2" },
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    { "id": "1", "body": "some comment", "postId": 1 }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "password": "123"
     }
