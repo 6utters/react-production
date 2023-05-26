@@ -1,13 +1,13 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
-const AboutPage: FC = () => {
+const AboutPage: FC = memo(() => {
   const { t } = useTranslation('about')
   return (
     <div>
       {t('О нас')}
     </div>
   )
-}
+})
 
 export default AboutPage

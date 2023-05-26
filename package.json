@@ -56,6 +56,7 @@
     "babel-loader": "^8.2.3",
     "babel-plugin-i18next-extract": "^0.8.3",
     "css-loader": "^6.6.0",
+    "entities": "^3.0.1",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-i18next": "^5.1.2",
