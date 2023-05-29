@@ -53,12 +53,12 @@ module.exports = {
     'no-param-reassign': 'off',
     'react/prop-types': 'off',
     'react/jsx-no-useless-fragment': 'off',
-    'no-undef': 'off',
-    'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix']
+    'no-undef': 'off'
   },
   globals: {
     __IS_DEV__: true,
-    __API__: true
+    __API__: true,
+    __PROJECT: true
   },
   overrides: [{
     files: ['**/src/**/*.{test,stories}.{ts,tsx}'],

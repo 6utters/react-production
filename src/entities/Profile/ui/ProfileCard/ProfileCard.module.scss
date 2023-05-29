@@ -2,14 +2,13 @@
   padding: 20px;
   border: 2px solid var(--inverted-bg-color);
 }
- 
+
 .input {
   margin-top: 10px;
 }
 
-.loading
-.error {
-  display: flex; 
+.loading .error {
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 300px;
@@ -24,4 +23,3 @@
 .editing {
   border: 2px solid var(--inverted-primary-color);
 }
- 
