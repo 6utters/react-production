@@ -21,11 +21,11 @@ export function buildPlugins({
       __IS_DEV__: JSON.stringify(isDev),
       __API__: JSON.stringify(apiUrl),
       __PROJECT__: JSON.stringify(project)
-    }),
-    new ReactRefreshPlugin()
+    })
   ]
 
   if (isDev) {
+    plugins.push(new ReactRefreshPlugin())
     plugins.push(new webpack.HotModuleReplacementPlugin())
     plugins.push(new BundleAnalyzerPlugin({
       openAnalyzer: false
