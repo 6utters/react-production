@@ -3,39 +3,15 @@ import { BuildOptions } from './types/config'
 import { buildCssLoader } from './loaders/buildCssLoader'
 import { buildSvgLoader } from './loaders/buildSvgLoader'
 import { buildFileLoader } from './loaders/buildFileLoader'
+import { buildBabelLoader } from './loaders/buildBabelLoader'
+import { buildTypescriptLoader } from './loaders/buildTypescriptLoader'
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
-  const babelLoader = {
-    test: /\.(js|jsx|tsx)$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env'],
-        plugins: [
-          [
-            'i18next-extract',
-            {
-              locales: ['ru', 'en'],
-              keyAsDefaultValue: true
-            }
-          ]
-        ]
-      }
-    }
-  }
-
+  const babelLoader = buildBabelLoader(isDev)
   const svgLoader = buildSvgLoader()
-
   const fileLoader = buildFileLoader()
-
   const cssLoader = buildCssLoader(isDev)
-
-  const typescriptLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/
-  }
+  const typescriptLoader = buildTypescriptLoader()
 
   return [
     fileLoader,
