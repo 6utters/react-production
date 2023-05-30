@@ -12,6 +12,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar'
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg'
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg'
 import { Icon } from 'shared/ui/Icon/Icon'
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
@@ -53,11 +54,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
     }
   }, [])
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchArticleById(id))
-    }
-  }, [dispatch, id])
+  useInitialEffect(() => dispatch(fetchArticleById(id)))
 
   let content
 
