@@ -30,7 +30,7 @@ const initialReducers: ReducerList = {
   profile: profileReducer
 }
 
-const ProfilePage: FC<ProfilePageProps> = memo(({ className }) => {
+const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
   const { t } = useTranslation('profile')
   const dispatch = useAppDispatch()
   const formData = useSelector(getProfileForm)
@@ -117,6 +117,6 @@ const ProfilePage: FC<ProfilePageProps> = memo(({ className }) => {
       </div>
     </DynamicModuleLoader>
   )
-})
+}
 
-export default ProfilePage
+export default memo(ProfilePage)

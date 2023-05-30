@@ -1,7 +1,7 @@
 import { FC, memo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-const MainPage: FC = memo(() => {
+const MainPage: FC = () => {
   const { t } = useTranslation('main')
 
   return (
@@ -9,6 +9,6 @@ const MainPage: FC = memo(() => {
       {t('Главная страница')}
     </div>
   )
-})
+}
 
-export default MainPage
+export default memo(MainPage)
