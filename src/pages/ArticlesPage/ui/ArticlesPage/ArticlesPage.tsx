@@ -10,9 +10,7 @@ interface ArticlesPageProps {
 const ArticlesPage: FC<ArticlesPageProps> = ({ className }) => {
   const { t } = useTranslation()
   return (
-    <div className={classNames(cls.ArticlesPage, {}, [className])}>
-      Articles page
-    </div>
+    <div className={classNames(cls.ArticlesPage, {}, [className])} />
   )
 }
 
