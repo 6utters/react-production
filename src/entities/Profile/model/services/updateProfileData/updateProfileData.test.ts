@@ -6,6 +6,7 @@ import avatar from 'shared/assets/tests/storybook.png'
 import { updateProfileData } from './updateProfileData'
 
 const data = {
+  id: '1',
   username: 'admin',
   age: 22,
   country: Country.Ukraine,
