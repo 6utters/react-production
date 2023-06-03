@@ -40,7 +40,7 @@ module.exports = {
     'comma-dangle': ['error', 'never'],
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to']
+      ignoreAttribute: ['data-testid', 'to', 'target']
     }],
     'max-len': ['error', {
       ignoreComments: true,

@@ -20,5 +20,7 @@
   "Форма авторизации": "Login form",
   "Вы ввели неверный логин или пароль": "Invalid email of password",
   "Выйти": "Log out",
-  "Страница профиля": "Profile Page"
+  "Страница профиля": "Profile Page",
+  "Production App": "Production App",
+  "Создать статью": "Create article"
 }
