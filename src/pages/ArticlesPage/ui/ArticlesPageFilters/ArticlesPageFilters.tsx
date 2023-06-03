@@ -12,7 +12,6 @@ import { Card } from 'shared/ui/Card/Card'
 import { Input } from 'shared/ui/Input/Input'
 import { SortOrder } from 'shared/types'
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce'
-import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs'
 import { ArticleType } from 'entities/Article/model/types/article'
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList'
 import { getArticlesPageView } from '../../model/selectors/getArticlesPageView/getArticlesPageView'
@@ -67,8 +66,8 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(({ classNa
   const onChangeType = useCallback((value: ArticleType) => {
     dispatch(articlesPageActions.setType(value))
     dispatch(articlesPageActions.setPage(1))
-    debouncedChangeData()
-  }, [debouncedChangeData, dispatch])
+    fetchData()
+  }, [fetchData, dispatch])
 
   return (
     <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>

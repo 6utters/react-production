@@ -9,11 +9,11 @@ import { getArticlesPageLimit } from '../../selectors/getArticlesPageLimit/getAr
 import { getArticlesPagePageNumber } from '../../selectors/getArticlesPagePageNumber/getArticlesPagePageNumber'
 import { getArticlesPageType } from '../../selectors/getArticlesPageType/getArticlesPageType'
 
-interface fetchArticleListProps {
+interface FetchArticleListProps {
     replace?: boolean
 }
 
-export const fetchArticleList = createAsyncThunk<Article[], fetchArticleListProps, ThunkConfig<string>>(
+export const fetchArticleList = createAsyncThunk<Article[], FetchArticleListProps, ThunkConfig<string>>(
   'articlesPage/fetchArticleList',
   async (props, thunkAPI) => {
     const { extra, rejectWithValue, getState } = thunkAPI

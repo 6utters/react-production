@@ -8,7 +8,11 @@ import { CombinedState } from 'redux'
 import { ProfileSchema } from 'entities/Profile'
 import { AxiosInstance } from 'axios'
 import { ArticleDetailsSchema } from 'entities/Article'
-import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage'
+import {
+  ArticleDetailsCommentSchema,
+  ArticleDetailsPageSchema,
+  ArticleDetailsRecommendationsSchema
+} from 'pages/ArticleDetailsPage'
 import { AddCommentFormSchema } from 'features/AddCommentForm'
 import { ArticlesPageSchema } from 'pages/ArticlesPage'
 import { PageSchema } from 'widgets/Page'
@@ -22,13 +26,12 @@ export interface StateSchema {
     loginForm?: LoginSchema;
     profile?: ProfileSchema
     articleDetails?: ArticleDetailsSchema
-    articleDetailsComment?: ArticleDetailsCommentSchema
     addCommentForm?: AddCommentFormSchema
     articlesPage?: ArticlesPageSchema
+    articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
-export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>
 
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>,
