@@ -11,7 +11,7 @@ interface CurrencySelectProps {
     readonly?: boolean
 }
 
-const options: SelectOption[] = [
+const options: SelectOption<Currency>[] = [
   { value: Currency.USD, content: Currency.USD },
   { value: Currency.BYN, content: Currency.BYN },
   { value: Currency.RUB, content: Currency.RUB }

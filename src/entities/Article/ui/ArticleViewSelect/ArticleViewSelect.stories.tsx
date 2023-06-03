@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ArticleViewSelect } from './ArticleViewSelect'
 
 export default {
-  title: 'shared/ArticleViewSelect',
+  title: 'entities/ArticleViewSelect',
   component: ArticleViewSelect,
   argTypes: {
     backgroundColor: { control: 'color' }
