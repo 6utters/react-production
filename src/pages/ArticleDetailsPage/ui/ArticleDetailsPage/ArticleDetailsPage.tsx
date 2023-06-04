@@ -10,8 +10,8 @@ import { useSelector } from 'react-redux'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { AddCommentForm } from 'features/AddCommentForm'
-import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle'
 import { Page } from 'widgets/Page/ui/Page'
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
 import {
   getArticleDetailsCommentIsLoading
 } from '../../model/selectors/getArticleDetailsCommentIsLoading/getArticleDetailsCommentIsLoading'

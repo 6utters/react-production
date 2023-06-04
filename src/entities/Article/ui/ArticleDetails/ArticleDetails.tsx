@@ -1,5 +1,5 @@
 import {
-  FC, memo, useCallback, useEffect
+  FC, memo, useCallback
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'

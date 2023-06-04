@@ -1,11 +1,11 @@
 import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { ArticleView } from 'entities/Article'
 import ListIcon from 'shared/assets/icons/list-24-24.svg'
 import TileIcon from 'shared/assets/icons/tile-24-24.svg'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { Icon } from 'shared/ui/Icon/Icon'
+import { ArticleView } from '../../model/types/article'
 import cls from './ArticleViewSelect.module.scss'
 
 interface ArticleViewSelectProps {
