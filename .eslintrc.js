@@ -48,7 +48,8 @@ module.exports = {
       ignoreAttribute: ['data-testid', 'to', 'target', 'justify',
         'align',
         'direction',
-        'gap'
+        'gap',
+        'role'
       ]
     }],
     'max-len': ['error', {
