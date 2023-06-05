@@ -13,6 +13,7 @@ import EyeIcon from 'shared/assets/icons/eye-20-20.svg'
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg'
 import { Icon } from 'shared/ui/Icon/Icon'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { HStack, VStack } from 'shared/ui/Stack'
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
@@ -77,23 +78,25 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
   } else {
     content = (
       <>
-        <div className={cls.avatar_wrapper}>
+        <HStack justify="center" max className={cls.avatar_wrapper}>
           <Avatar size={200} src={article?.img} className={cls.avatar} />
-        </div>
-        <Text
-          className={cls.title}
-          size={TextSize.L}
-          title={article?.title}
-          text={article?.subtitle}
-        />
-        <div className={cls.article_info}>
-          <Icon className={cls.icon} Svg={EyeIcon} />
-          <Text text={String(article?.views)} />
-        </div>
-        <div className={cls.article_info}>
-          <Icon className={cls.icon} Svg={CalendarIcon} />
-          <Text text={article?.createdAt} />
-        </div>
+        </HStack>
+        <VStack gap="4" max>
+          <Text
+            className={cls.title}
+            size={TextSize.L}
+            title={article?.title}
+            text={article?.subtitle}
+          />
+          <HStack gap="8" className={cls.article_info}>
+            <Icon className={cls.icon} Svg={EyeIcon} />
+            <Text text={String(article?.views)} />
+          </HStack>
+          <HStack gap="8">
+            <Icon className={cls.icon} Svg={CalendarIcon} />
+            <Text text={article?.createdAt} />
+          </HStack>
+        </VStack>
         {article?.blocks.map(renderBlock)}
       </>
     )
@@ -101,9 +104,9 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.ArticleDetails, {}, [className])}>
+      <VStack gap="16" className={classNames(cls.ArticleDetails, {}, [className])}>
         {content}
-      </div>
+      </VStack>
     </DynamicModuleLoader>
   )
 })
