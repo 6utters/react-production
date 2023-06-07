@@ -4,12 +4,13 @@ import {
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { getScrollByPath, pageActions } from 'widgets/Page'
 import { useLocation } from 'react-router-dom'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useSelector } from 'react-redux'
 import { StateSchema } from 'app/providers/StoreProvider'
 import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle'
+import { pageActions } from '../model/slice/pageSlice'
+import { getScrollByPath } from '../model/selectors/getScrollByPath/getScrollByPath'
 import cls from './Page.module.scss'
 
 interface PageProps {
@@ -17,6 +18,8 @@ interface PageProps {
     children: ReactNode
     onScrollEnd?: () => void
 }
+
+export const PAGE_ID = 'PAGE_ID'
 
 export const Page: FC<PageProps> = memo((props) => {
   const { className, children, onScrollEnd } = props
@@ -44,13 +47,14 @@ export const Page: FC<PageProps> = memo((props) => {
   }, 500)
 
   return (
-    <section
+    <main
       ref={wrapperRef}
       className={classNames(cls.Page, {}, [className])}
       onScroll={onScroll}
+      id={PAGE_ID}
     >
       {children}
       {onScrollEnd ? <div ref={triggerRef} className={cls.trigger} /> : null}
-    </section>
+    </main>
   )
 })

@@ -1,8 +1,8 @@
 import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk/TestAsyncThunk'
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
-import { ValidateProfileError } from 'entities/Profile'
 import avatar from 'shared/assets/tests/storybook.png'
+import { ValidateProfileError } from '../../types/profile'
 import { updateProfileData } from './updateProfileData'
 
 const data = {
