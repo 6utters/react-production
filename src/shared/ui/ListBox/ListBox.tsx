@@ -1,10 +1,8 @@
-import {
-  FC, Fragment, ReactNode
-} from 'react'
+import { FC, Fragment, ReactNode } from 'react'
 import { Listbox as HListBox } from '@headlessui/react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Text } from 'shared/ui/Text/Text'
-import { HStack } from 'shared/ui/Stack'
+import { DropdownDirection } from 'shared/types/ui'
+import { HStack } from '../Stack/HStack/HStack'
 import { Button } from '../Button/Button'
 import cls from './ListBox.module.scss'
 
@@ -13,8 +11,6 @@ export interface ListBoxItem {
   content: ReactNode
   disabled?: boolean
 }
-
-type DropdownDirection = 'top' | 'bottom'
 
 interface ListBoxProps {
   items?: ListBoxItem[]
@@ -28,13 +24,15 @@ interface ListBoxProps {
 }
 
 const madDirectionClass: Record<DropdownDirection, string> = {
-  top: cls.option_top,
-  bottom: cls.option_bottom
+  'top left': cls.option_top_left,
+  'top right': cls.option_top_right,
+  'bottom left': cls.option_bottom_left,
+  'bottom right': cls.option_bottom_right
 }
 
 export const ListBox: FC<ListBoxProps> = (props) => {
   const {
-    className, items, value, defaultValue, onChange, readonly, direction = 'bottom', label
+    className, items, value, defaultValue, onChange, readonly, direction = 'bottom right', label
   } = props
 
   const additionalClasses = [madDirectionClass[direction]]
