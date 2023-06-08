@@ -1,8 +1,8 @@
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
 import avatar from 'shared/assets/tests/storybook.png'
-import { ValidateProfileError } from '../../types/profile'
 import { validateProfileData } from './validateProfileData'
+import { ValidateProfileError } from '../../types/EditableProfileCardSchema'
 
 const data = {
   username: 'admin',
