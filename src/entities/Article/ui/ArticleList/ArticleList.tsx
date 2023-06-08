@@ -15,6 +15,7 @@ interface ArticleListProps {
     isLoading?: boolean
     view?: ArticleView
     target?: HTMLAttributeAnchorTarget
+    virtualized?: boolean
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 12 : 3)
@@ -25,7 +26,7 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL
 
 export const ArticleList: FC<ArticleListProps> = memo((props) => {
   const {
-    articles, className, isLoading, view = ArticleView.SMALL, target
+    articles, className, isLoading, view = ArticleView.SMALL, target, virtualized = true
   } = props
   const { t } = useTranslation('article')
 
@@ -88,17 +89,31 @@ export const ArticleList: FC<ArticleListProps> = memo((props) => {
           ref={registerChild}
           className={classNames(cls.ArticleList, {}, [className, cls[view]])}
         >
-          <List
-            height={height}
-            width={width ? width - 80 : 700}
-            rowCount={rowCount}
-            rowHeight={isBig ? 700 : 330}
-            rowRenderer={rowRender}
-            autoHeight
-            onScroll={onChildScroll}
-            isScrolling={isScrolling}
-            scrollTop={scrollTop}
-          />
+          {virtualized
+            ? (
+              <List
+                height={height}
+                width={width ? width - 80 : 700}
+                rowCount={rowCount}
+                rowHeight={isBig ? 700 : 330}
+                rowRenderer={rowRender}
+                autoHeight
+                onScroll={onChildScroll}
+                isScrolling={isScrolling}
+                scrollTop={scrollTop}
+              />
+            )
+            : (
+              articles.map((item) => (
+                <ArticleListItem
+                  article={item}
+                  view={view}
+                  target={target}
+                  key={item.id}
+                  className={cls.card}
+                />
+              ))
+            )}
           {isLoading && getSkeletons(view)}
         </div>
       )}
