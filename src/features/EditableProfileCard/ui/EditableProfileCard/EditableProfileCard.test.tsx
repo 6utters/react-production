@@ -16,7 +16,8 @@ const profile: Profile = {
   currency: Currency.USD,
   country: Country.Armenia,
   city: 'City',
-  username: 'admin123'
+  username: 'admin123',
+  avatar: 'avatar'
 }
 
 const options = {
@@ -73,18 +74,18 @@ describe('features/EditableProfileCard', () => {
 
     await userEvent.click(screen.getByTestId('EditableProfileCardHeader.SaveButton'))
 
-    expect(screen.getAllByTestId('EditableProfileCard.Error.Paragraph')[0]).toBeInTheDocument()
+    expect(screen.getByTestId('EditableProfileCard.Error.Paragraph')).toBeInTheDocument()
   })
 
-  // test('Should send put request if there is no errors spotted', async () => {
-  //   const mockPutReq = jest.spyOn($api, 'put')
-  //   componentRender(<EditableProfileCard id="1" />, options)
-  //   await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'))
-  //
-  //   await userEvent.type(screen.getByTestId('ProfileCard.Firstname'), 'user')
-  //
-  //   await userEvent.click(screen.getByTestId('EditableProfileCardHeader.SaveButton'))
-  //
-  //   expect(mockPutReq).toHaveBeenCalled()
-  // })
+  test('Should send put request if there is no errors spotted', async () => {
+    const mockPutReq = jest.spyOn($api, 'put')
+    componentRender(<EditableProfileCard id="1" />, options)
+    await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'))
+
+    await userEvent.type(screen.getByTestId('ProfileCard.Firstname'), 'user')
+
+    await userEvent.click(screen.getByTestId('EditableProfileCardHeader.SaveButton'))
+
+    expect(mockPutReq).toHaveBeenCalled()
+  })
 })
