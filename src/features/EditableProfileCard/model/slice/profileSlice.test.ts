@@ -1,9 +1,10 @@
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
 import avatar from 'shared/assets/tests/storybook.png'
+import { ValidateProfileError } from '../consts/consts'
 import { profileActions, profileReducer } from './profileSlice'
 import { updateProfileData } from '../services/updateProfileData/updateProfileData'
-import { ProfileSchema, ValidateProfileError } from '../types/EditableProfileCardSchema'
+import { ProfileSchema } from '../types/EditableProfileCardSchema'
 
 const data = {
   username: 'admin',

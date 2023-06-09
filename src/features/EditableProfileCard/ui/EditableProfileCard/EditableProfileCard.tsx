@@ -10,7 +10,7 @@ import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { ProfileCard } from 'entities/Profile'
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { VStack } from 'shared/ui/Stack'
-import { ValidateProfileError } from '../../model/types/EditableProfileCardSchema'
+import { ValidateProfileError } from '../../model/consts/consts'
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm'
 import {
   getProfileIsLoading
