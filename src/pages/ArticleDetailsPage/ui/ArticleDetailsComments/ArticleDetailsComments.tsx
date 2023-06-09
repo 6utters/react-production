@@ -1,4 +1,6 @@
-import { FC, memo, useCallback } from 'react'
+import {
+  FC, memo, useCallback, Suspense
+} from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Text, TextSize } from 'shared/ui/Text/Text'
@@ -19,7 +21,7 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 
 interface ArticleDetailsCommentsProps {
     className?: string
-    id: string
+    id?: string
 }
 
 export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo((props) => {
@@ -39,12 +41,14 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo((pro
   }, [dispatch])
 
   return (
-    <VStack gap="16" className={classNames('', {}, [className])}>
+    <VStack gap="16" max className={classNames('', {}, [className])}>
       <Text
         size={TextSize.L}
         title={t('Комментарии')}
       />
-      <AddCommentForm onSendComment={onSendComment} />
+      <Suspense fallback={t('Загрузка')}>
+        <AddCommentForm onSendComment={onSendComment} />
+      </Suspense>
       <CommentList
         isLoading={commentsLoading}
         comments={comments}
