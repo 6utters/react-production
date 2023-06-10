@@ -9,7 +9,7 @@ export default {
   globals: {
     __IS_DEV__: true,
     __API__: '',
-    __PROJECT: 'jest'
+    __PROJECT__: 'jest'
   },
   clearMocks: true,
   testEnvironment: 'jsdom',
@@ -39,7 +39,16 @@ export default {
     '\\.(s?css)$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     '\\.png': path.resolve(__dirname, 'jestEmptyComponent.tsx')
-  }
+  },
+  reporters: [
+    'default',
+    ['jest-html-reporters', {
+      publicPath: '<rootDir>/reports/unit',
+      filename: 'report.html',
+      openReport: false,
+      inlineSource: true
+    }]
+  ]
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,

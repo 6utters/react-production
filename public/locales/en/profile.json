@@ -21,5 +21,6 @@
   "Некорректная аватарка": "Incorrect avatar",
   "Некорректное имя пользователя": "Incorrect username",
   "Данные не указаны": "No data provided",
-  "Серверная ошибка": "Server error appeared"
+  "Серверная ошибка": "Server error appeared",
+  "Профиль не найден": "There is no such profile"
 }

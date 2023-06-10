@@ -22,5 +22,7 @@
   "Выйти": "Log out",
   "Страница профиля": "Profile Page",
   "Production App": "Production App",
-  "Создать статью": "Create article"
+  "Создать статью": "Create article",
+  "Админ панель": "Admin panel",
+  "Нет доступа к данной странице": "This page is forbidden"
 }

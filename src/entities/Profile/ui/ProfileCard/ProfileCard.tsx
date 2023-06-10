@@ -72,12 +72,14 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         placeholder={t('Ваше имя')}
         onChange={onChangeFirstname}
         readonly={readonly}
+        data-testid="ProfileCard.Firstname"
       />
       <Input
         value={data?.lastname}
         placeholder={t('Ваша фамилия')}
         onChange={onChangeLastname}
         readonly={readonly}
+        data-testid="ProfileCard.Lastname"
       />
       <Input
         value={data?.age}

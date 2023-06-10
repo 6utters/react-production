@@ -1,9 +1,9 @@
 import { configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
-import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
 import { $api } from 'shared/api/api'
 import { CombinedState } from 'redux'
 import { pageReducer } from 'widgets/Page'
+import { rtkApi } from 'shared/api/rtkApi'
 import { createReducerManager } from './reducerManager'
 import { StateSchema, ThunkExtraArg } from './StateSchema'
 
@@ -13,9 +13,9 @@ export function createReduxStore(
 ) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
-    counter: counterReducer,
     user: userReducer,
-    page: pageReducer
+    page: pageReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer
   }
 
   const reducerManager = createReducerManager(rootReducers)
@@ -32,7 +32,7 @@ export function createReduxStore(
       thunk: {
         extraArgument: extraArg
       }
-    })
+    }).concat(rtkApi.middleware)
   })
 
   // @ts-ignore

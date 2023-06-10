@@ -1,14 +1,9 @@
 import { FC, memo } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Text } from 'shared/ui/Text/Text'
 import { Card } from 'shared/ui/Card/Card'
-import { Avatar } from 'shared/ui/Avatar/Avatar'
-import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
-import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
-import {
-  ArticleBlockType, ArticleTextBlock, ArticleView
-} from '../../model/types/article'
+import { ArticleView } from '../../model/consts/articleConsts'
+
 import cls from './ArticleListItem.module.scss'
 
 interface ArticleListItemSkeletonProps {
