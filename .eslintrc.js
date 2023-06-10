@@ -49,8 +49,9 @@ module.exports = {
         'align',
         'direction',
         'gap',
+        'border',
         'role',
-          'as'
+        'as'
       ]
     }],
     'max-len': ['error', {
@@ -66,7 +67,8 @@ module.exports = {
     'react/jsx-no-useless-fragment': 'off',
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
-    'prod-path-plugin/path-checker': 'error'
+    'prod-path-plugin/path-checker': 'error',
+    'linebreak-style': ['error', 'windows']
   },
   globals: {
     __IS_DEV__: true,

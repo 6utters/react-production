@@ -2,9 +2,11 @@ import { FC, Fragment, ReactNode } from 'react'
 import { Listbox as HListBox } from '@headlessui/react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { DropdownDirection } from 'shared/types/ui'
-import { HStack } from '../Stack/HStack/HStack'
-import { Button } from '../Button/Button'
+import { HStack } from '../../../Stack/HStack/HStack'
+import { Button } from '../../../Button/Button'
+import { madDirectionClass } from '../../styles/consts'
 import cls from './ListBox.module.scss'
+import popupCls from '../../styles/Popup.module.scss'
 
 export interface ListBoxItem {
   value: string
@@ -23,13 +25,6 @@ interface ListBoxProps {
   label?: string
 }
 
-const madDirectionClass: Record<DropdownDirection, string> = {
-  'top left': cls.option_top_left,
-  'top right': cls.option_top_right,
-  'bottom left': cls.option_bottom_left,
-  'bottom right': cls.option_bottom_right
-}
-
 export const ListBox: FC<ListBoxProps> = (props) => {
   const {
     className, items, value, defaultValue, onChange, readonly, direction = 'bottom right', label
@@ -43,11 +38,11 @@ export const ListBox: FC<ListBoxProps> = (props) => {
       <HListBox
         disabled={readonly}
         as="div"
-        className={classNames(cls.ListBox, {}, [className])}
+        className={classNames(cls.ListBox, {}, [className, popupCls.Popup])}
         value={value}
         onChange={onChange}
       >
-        <HListBox.Button disabled={readonly} className={cls.trigger}>
+        <HListBox.Button disabled={readonly} className={popupCls.trigger}>
           <Button disabled={readonly}>
             {value ?? defaultValue}
           </Button>
@@ -63,8 +58,8 @@ export const ListBox: FC<ListBoxProps> = (props) => {
               {({ active, selected }) => (
                 <li
                   className={classNames(cls.item, {
-                    [cls.active]: active,
-                    [cls.disabled]: item.disabled
+                    [popupCls.active]: active,
+                    [popupCls.disabled]: item.disabled
                   })}
                 >
                   {selected && '!!!'}
