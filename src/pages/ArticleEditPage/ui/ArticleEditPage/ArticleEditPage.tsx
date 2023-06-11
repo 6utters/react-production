@@ -1,8 +1,8 @@
 import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { Page } from 'widgets/Page/ui/Page'
 import { useParams } from 'react-router-dom'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { Page } from '@/widgets/Page/ui/Page'
 
 interface ArticleEditPageProps {
     className?: string

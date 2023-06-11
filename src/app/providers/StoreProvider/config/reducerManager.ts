@@ -1,7 +1,7 @@
 import {
   AnyAction, combineReducers, Reducer, ReducersMapObject
 } from '@reduxjs/toolkit'
-import { StateSchema } from 'app/providers/StoreProvider'
+import { StateSchema } from '@/app/providers/StoreProvider'
 import { ReducerManager, StateSchemaKey } from '../config/StateSchema'
 
 export function createReducerManager(initialReducers: ReducersMapObject<StateSchema>): ReducerManager {

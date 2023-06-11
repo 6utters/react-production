@@ -1,9 +1,9 @@
 import {
   FC, ReactNode, memo, useCallback, useEffect
 } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
 import { Portal } from '@headlessui/react'
-import { useAnimationLibs } from 'shared/lib/components/AnimationProvider'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider'
 import { Overlay } from '../Overlay/Overlay'
 import cls from './Drawer.module.scss'
 
