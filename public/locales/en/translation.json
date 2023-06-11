@@ -24,5 +24,8 @@
   "Production App": "Production App",
   "Создать статью": "Create article",
   "Админ панель": "Admin panel",
-  "Нет доступа к данной странице": "This page is forbidden"
+  "Нет доступа к данной странице": "This page is forbidden",
+  "Ваш отзыв": "Your rating",
+  "Закрыть": "Close",
+  "Отправить": "Send"
 }
