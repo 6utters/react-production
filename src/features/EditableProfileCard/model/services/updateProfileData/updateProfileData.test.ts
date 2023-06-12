@@ -1,7 +1,7 @@
-import { TestAsyncThunk } from 'shared/lib/tests/testAsyncThunk/TestAsyncThunk'
-import { Country } from 'entities/Country'
-import { Currency } from 'entities/Currency'
-import avatar from 'shared/assets/tests/storybook.png'
+import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/TestAsyncThunk'
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
+import avatar from '@/shared/assets/tests/storybook.png'
 import { ValidateProfileError } from '../../consts/consts'
 import { updateProfileData } from './updateProfileData'
 

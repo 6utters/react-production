@@ -6,9 +6,8 @@ import { buildFileLoader } from './loaders/buildFileLoader'
 import { buildBabelLoader } from './loaders/buildBabelLoader'
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
-
-  const codeBabelLoader = buildBabelLoader({...options, isTsx: false})
-  const tsxCodeBabelLoader = buildBabelLoader({...options, isTsx: true})
+  const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false })
+  const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true })
 
   const svgLoader = buildSvgLoader()
   const fileLoader = buildFileLoader()

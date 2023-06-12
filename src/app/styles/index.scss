@@ -9,7 +9,8 @@ body {
   color: var(--primary-color);
 }
 
-.app {
+.app,
+.app_drawer {
   min-height: 100vh;
   background: var(--bg-color);
   color: var(--primary-color);

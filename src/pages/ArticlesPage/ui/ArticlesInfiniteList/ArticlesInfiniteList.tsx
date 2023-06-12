@@ -1,11 +1,11 @@
 import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useSelector } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { ArticleList } from 'entities/Article'
-import { Text } from 'shared/ui/Text/Text'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { ArticleList } from '@/entities/Article'
+import { Text } from '@/shared/ui/Text/Text'
 import { getArticles } from '../../model/slice/articlesPageSlice'
 import {
   getArticlesPageIsLoading

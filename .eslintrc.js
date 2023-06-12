@@ -49,8 +49,9 @@ module.exports = {
         'align',
         'direction',
         'gap',
+        'border',
         'role',
-          'as'
+        'as'
       ]
     }],
     'max-len': ['error', {

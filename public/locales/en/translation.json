@@ -24,5 +24,11 @@
   "Production App": "Production App",
   "Создать статью": "Create article",
   "Админ панель": "Admin panel",
-  "Нет доступа к данной странице": "This page is forbidden"
+  "Нет доступа к данной странице": "This page is forbidden",
+  "Ваш отзыв": "Your rating",
+  "Закрыть": "Close",
+  "Отправить": "Send",
+  "Оцените статью": "Rate this article",
+  "Оставьте свой отзыв о статье, это поможет улучшить качество": "Leave your feedback to improve the quality of the app",
+  "Спасибо за оценку": "Thank you for your feedback"
 }
