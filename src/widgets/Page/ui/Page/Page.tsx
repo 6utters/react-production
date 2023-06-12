@@ -9,8 +9,8 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { StateSchema } from '@/app/providers/StoreProvider'
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle'
-import { pageActions } from '../model/slice/pageSlice'
-import { getScrollByPath } from '../model/selectors/getScrollByPath/getScrollByPath'
+import { pageActions } from '../../model/slice/pageSlice'
+import { getScrollByPath } from '../../model/selectors/getScrollByPath/getScrollByPath'
 import cls from './Page.module.scss'
 
 interface PageProps {

@@ -67,7 +67,8 @@ module.exports = {
     'react/jsx-no-useless-fragment': 'off',
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
-    'prod-path-plugin/path-checker': 'error'
+    'prod-path-plugin/path-checker': ['error', { alias: '@' }],
+    'prod-path-plugin/public-api-imports': ['error', { alias: '@' }]
   },
   globals: {
     __IS_DEV__: true,

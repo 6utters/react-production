@@ -5,14 +5,13 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import {
-  ArticleSortField, ArticleSortSelector, ArticleTypeTabs, ArticleView, ArticleViewSelect
+  ArticleSortField, ArticleSortSelector, ArticleTypeTabs, ArticleType, ArticleView, ArticleViewSelect
 } from '@/entities/Article'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Card } from '@/shared/ui/Card/Card'
 import { Input } from '@/shared/ui/Input/Input'
 import { SortOrder } from '@/shared/types'
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
-import { ArticleType } from '@/entities/Article/model/consts/articleConsts'
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList'
 import { getArticlesPageView } from '../../model/selectors/getArticlesPageView/getArticlesPageView'
 import { articlesPageActions } from '../../model/slice/articlesPageSlice'

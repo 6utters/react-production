@@ -8,4 +8,6 @@ export { ArticleList } from './ui/ArticleList/ArticleList'
 export { ArticleViewSelect } from './ui/ArticleViewSelect/ArticleViewSelect'
 export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector'
 export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs'
-export { ArticleView, ArticleType, ArticleSortField } from './model/consts/articleConsts'
+export {
+  ArticleView, ArticleType, ArticleSortField, ArticleBlockType
+} from './model/consts/articleConsts'
