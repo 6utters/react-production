@@ -27,7 +27,7 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
     onChange?.(e.target.value as T)
   }
 
-  const oprionList = useMemo(() => options?.map((opt) => (
+  const optionList = useMemo(() => options?.map((opt) => (
     <option
       className={cls.option}
       value={opt.value}
@@ -48,7 +48,7 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
         value={value}
         onChange={onChangeHandler}
       >
-        {oprionList}
+        {optionList}
       </select>
     </div>
   )

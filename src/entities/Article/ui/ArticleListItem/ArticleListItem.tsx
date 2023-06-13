@@ -1,6 +1,4 @@
-import {
-  FC, HTMLAttributeAnchorTarget, memo
-} from 'react'
+import { FC, HTMLAttributeAnchorTarget, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Text } from '@/shared/ui/Text'
@@ -12,11 +10,9 @@ import { Button, ButtonTheme } from '@/shared/ui/Button'
 import { AppLink } from '@/shared/ui/AppLink'
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
-import {
-  Article, ArticleTextBlock
-} from '../../model/types/article'
+import { Article, ArticleTextBlock } from '../../model/types/article'
+import { getRouteArticleDetails } from '@/shared/const/router'
 import cls from './ArticleListItem.module.scss'
-import { RoutePath } from '@/shared/const/router'
 
 interface ArticleListItemProps {
     className?: string
@@ -56,7 +52,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
             <ArticleTextBlockComponent block={textBlock} className={cls.text_block} />
           )}
           <div className={cls.footer}>
-            <AppLink to={RoutePath.article_details + article.id}>
+            <AppLink to={getRouteArticleDetails(article.id)}>
               <Button
                 theme={ButtonTheme.OUTLINE}
               >
@@ -73,7 +69,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
   return (
     <AppLink
       target={target}
-      to={RoutePath.article_details + article.id}
+      to={getRouteArticleDetails(article.id)}
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
     >
       <Card>
