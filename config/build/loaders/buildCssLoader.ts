@@ -1,9 +1,9 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import { BuildOptions } from '../types/config'
 
 export function buildCssLoader(isDev: boolean) {
   return {
     test: /\.s[ac]ss$/i,
+    exclude: /node_modules/,
     use: [
       isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {

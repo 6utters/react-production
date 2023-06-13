@@ -3,11 +3,11 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
 import { getArticleDetailsData } from '@/entities/Article'
 import { HStack } from '@/shared/ui/Stack'
 import { getCanEditArticle } from '../../model/selectors/getCanEditArticle/getCanEditArticle'
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router'
 
 interface ArticleDetailsPageHeaderProps {
     className?: string
@@ -21,11 +21,13 @@ export const ArticleDetailsPageHeader: FC<ArticleDetailsPageHeaderProps> = memo(
   const canEdit = useSelector(getCanEditArticle)
 
   const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles)
+    navigate(getRouteArticles())
   }, [navigate])
 
   const onEditArticle = useCallback(() => {
-    navigate(`${RoutePath.articles}/${article?.id}/edit`)
+    if (article?.id) {
+      navigate(getRouteArticleEdit(article?.id))
+    }
   }, [article?.id, navigate])
 
   return (

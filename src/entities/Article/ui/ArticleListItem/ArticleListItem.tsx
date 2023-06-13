@@ -1,21 +1,17 @@
-import {
-  FC, HTMLAttributeAnchorTarget, memo, useCallback
-} from 'react'
+import { FC, HTMLAttributeAnchorTarget, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Text } from '@/shared/ui/Text/Text'
-import { Icon } from '@/shared/ui/Icon/Icon'
+import { Text } from '@/shared/ui/Text'
+import { Icon } from '@/shared/ui/Icon'
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
-import { Card } from '@/shared/ui/Card/Card'
-import { Avatar } from '@/shared/ui/Avatar/Avatar'
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
-import { AppLink } from '@/shared/ui/AppLink/AppLink'
+import { Card } from '@/shared/ui/Card'
+import { Avatar } from '@/shared/ui/Avatar'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
+import { AppLink } from '@/shared/ui/AppLink'
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
-import {
-  Article, ArticleTextBlock
-} from '../../model/types/article'
+import { Article, ArticleTextBlock } from '../../model/types/article'
+import { getRouteArticleDetails } from '@/shared/const/router'
 import cls from './ArticleListItem.module.scss'
 
 interface ArticleListItemProps {
@@ -56,7 +52,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
             <ArticleTextBlockComponent block={textBlock} className={cls.text_block} />
           )}
           <div className={cls.footer}>
-            <AppLink to={RoutePath.article_details + article.id}>
+            <AppLink to={getRouteArticleDetails(article.id)}>
               <Button
                 theme={ButtonTheme.OUTLINE}
               >
@@ -73,7 +69,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
   return (
     <AppLink
       target={target}
-      to={RoutePath.article_details + article.id}
+      to={getRouteArticleDetails(article.id)}
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
     >
       <Card>

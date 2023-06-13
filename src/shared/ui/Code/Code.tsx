@@ -1,5 +1,5 @@
 import {
-  FC, memo, ReactNode, useCallback
+  FC, memo, useCallback
 } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import CopyIcon from '@/shared/assets/icons/copy-20-20.svg'

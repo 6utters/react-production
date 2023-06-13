@@ -1,18 +1,17 @@
 import {
-  FC, memo, useCallback, useMemo
+  FC, memo, useCallback
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import {
-  ArticleSortField, ArticleSortSelector, ArticleTypeTabs, ArticleView, ArticleViewSelect
+  ArticleSortField, ArticleType, ArticleView
 } from '@/entities/Article'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { Card } from '@/shared/ui/Card/Card'
-import { Input } from '@/shared/ui/Input/Input'
+import { Card } from '@/shared/ui/Card'
+import { Input } from '@/shared/ui/Input'
 import { SortOrder } from '@/shared/types'
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
-import { ArticleType } from '@/entities/Article/model/consts/articleConsts'
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList'
 import { getArticlesPageView } from '../../model/selectors/getArticlesPageView/getArticlesPageView'
 import { articlesPageActions } from '../../model/slice/articlesPageSlice'
@@ -20,6 +19,9 @@ import { getArticlesPageSort } from '../../model/selectors/getArticlesPageSort/g
 import { getArticlesPageOrder } from '../../model/selectors/getArticlesPageOrder/getArticlesPageOrder'
 import { getArticlesPageSearch } from '../../model/selectors/getArticlesPageSearch/getArticlesPageSearch'
 import { getArticlesPageType } from '../../model/selectors/getArticlesPageType/getArticlesPageType'
+import { ArticleViewSelector } from '@/features/ArticleViewSelector'
+import { ArticleSortSelector } from '@/features/ArticleSortSelector'
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs'
 import cls from './ArticlesPageFilters.module.scss'
 
 interface ArticlesPageFiltersProps {
@@ -78,7 +80,7 @@ export const ArticlesPageFilters: FC<ArticlesPageFiltersProps> = memo(({ classNa
           onChangeOrder={onChangeOrder}
           onChangeSort={onChangeSort}
         />
-        <ArticleViewSelect view={view} onViewClick={onChangeView} />
+        <ArticleViewSelector view={view} onViewClick={onChangeView} />
       </div>
       <Card className={cls.search}>
         <Input placeholder={t('Поиск')} value={search} onChange={onChangeSearch} />

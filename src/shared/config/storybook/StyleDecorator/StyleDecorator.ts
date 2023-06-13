@@ -1,3 +1,4 @@
+// eslint-disable-next-line prod-path-plugin/layer-imports
 import '@/app/styles/index.scss'
 import { Story } from '@storybook/react'
 

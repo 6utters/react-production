@@ -1,11 +1,11 @@
 import { Story } from '@storybook/react'
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider'
-import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice'
+import { loginReducer } from '@/features/AuthByUsername/testing'
 import { ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice'
-import { addCommentFormReducer } from '@/features/AddCommentForm/model/slice/addCommentFormSlice'
-import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/model/slices'
-import { profileReducer } from '@/features/EditableProfileCard/model/slice/profileSlice'
+import { articleDetailsReducer } from '@/entities/Article/testing'
+import { addCommentFormReducer } from '@/features/AddCommentForm/testing'
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing'
+import { profileReducer } from '@/features/EditableProfileCard/testing'
 
 const defaultReducers: ReducerList = {
   loginForm: loginReducer,
