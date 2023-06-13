@@ -74,6 +74,13 @@ module.exports = {
         alias: '@',
         testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx']
       }
+    ],
+    'prod-path-plugin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing']
+      }
     ]
   },
   globals: {
