@@ -5,10 +5,10 @@ import ListIcon from '@/shared/assets/icons/list-24-24.svg'
 import TileIcon from '@/shared/assets/icons/tile-24-24.svg'
 import { Button, ButtonTheme } from '@/shared/ui/Button'
 import { Icon } from '@/shared/ui/Icon'
-import { ArticleView } from '../../model/consts/articleConsts'
-import cls from './ArticleViewSelect.module.scss'
+import cls from './ArticleViewSelector.module.scss'
+import { ArticleView } from '@/entities/Article'
 
-interface ArticleViewSelectProps {
+interface ArticleViewSelectorProps {
     className?: string
     view: ArticleView
     onViewClick?: (view: ArticleView) => void
@@ -25,7 +25,7 @@ const viewTypes = [
   }
 ]
 
-export const ArticleViewSelect: FC<ArticleViewSelectProps> = memo((props) => {
+export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo((props) => {
   const { view, onViewClick, className } = props
   const { t } = useTranslation()
 
