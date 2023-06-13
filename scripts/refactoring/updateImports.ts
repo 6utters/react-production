@@ -16,9 +16,16 @@ files.forEach((sourceFile) => {
   const importDeclarations = sourceFile.getImportDeclarations()
   importDeclarations.forEach((importDeclaration) => {
     const value = importDeclaration.getModuleSpecifierValue()
+    const valueWithoutAlias = value.replace('@/', '')
 
-    if (isAbsolute(value)) {
-      importDeclaration.setModuleSpecifier(`@/${value}`)
+    const segments = valueWithoutAlias.split('/')
+
+    const isSharedLayer = segments?.[0] === 'shared'
+    const isUiSlice = segments?.[1] === 'ui'
+
+    if (isAbsolute(valueWithoutAlias) && isSharedLayer && isUiSlice) {
+      const result = valueWithoutAlias.split('/').slice(0, 3).join('/')
+      importDeclaration.setModuleSpecifier(`@/${result}`)
     }
   })
 })
