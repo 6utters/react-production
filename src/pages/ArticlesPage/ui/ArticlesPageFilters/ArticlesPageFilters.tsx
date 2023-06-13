@@ -1,5 +1,5 @@
 import {
-  FC, memo, useCallback, useMemo
+  FC, memo, useCallback
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'

@@ -21,11 +21,13 @@ module.exports = {
     '@typescript-eslint',
     'i18next',
     'react-hooks',
-    'prod-path-plugin'
+    'prod-path-plugin',
+    'unused-imports'
   ],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
+    'unused-imports/no-unused-imports': 'error',
     indent: [2, 2],
     semi: [2, 'never'],
     'react/jsx-filename-extension': [1, {
