@@ -72,6 +72,15 @@
         "MANAGER"
       ],
       "avatar": "https://images.hindustantimes.com/tech/img/2023/01/26/960x540/_b9c9f4a2-7cd1-11ea-b578-8bb50559d90e_1674714194736_1674714194736.jpg"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "testpassword",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://images.hindustantimes.com/tech/img/2023/01/26/960x540/_b9c9f4a2-7cd1-11ea-b578-8bb50559d90e_1674714194736_1674714194736.jpg"
     }
   ],
   "profile": [
