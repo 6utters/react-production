@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react'
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender'
-import { AppRouter } from './AppRouter'
 import { getRouteAbout, getRouteAdminPanel, getRouteProfile } from '@/shared/const/router'
 import { UserRole } from '@/entities/User'
+import { AppRouter } from './AppRouter'
 
 describe('app/router/AppRouter', () => {
   test('should render the page', async () => {
