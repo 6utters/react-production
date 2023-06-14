@@ -11,9 +11,10 @@ import { StateSchema } from '@/app/providers/StoreProvider'
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle'
 import { pageActions } from '../../model/slice/pageSlice'
 import { getScrollByPath } from '../../model/selectors/getScrollByPath/getScrollByPath'
+import { TestProps } from '@/shared/types/tests'
 import cls from './Page.module.scss'
 
-interface PageProps {
+interface PageProps extends TestProps{
     className?: string
     children: ReactNode
     onScrollEnd?: () => void
@@ -52,6 +53,7 @@ export const Page: FC<PageProps> = memo((props) => {
       className={classNames(cls.Page, {}, [className])}
       onScroll={onScroll}
       id={PAGE_ID}
+      data-testid={props['data-testid'] ?? 'Page'}
     >
       {children}
       {onScrollEnd ? <div ref={triggerRef} className={cls.trigger} /> : null}
