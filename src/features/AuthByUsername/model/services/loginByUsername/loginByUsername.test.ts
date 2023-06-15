@@ -3,7 +3,7 @@ import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/TestAsyncThunk
 import { loginByUsername } from './loginByUsername'
 
 describe('loginByUsername', () => {
-  test('successful login', async () => {
+  test('successful common', async () => {
     const userValue = { username: '123', id: '1' }
 
     const thunk = new TestAsyncThunk(loginByUsername)
@@ -17,7 +17,7 @@ describe('loginByUsername', () => {
     expect(result.payload).toBe(userValue)
   })
 
-  test('rejected login', async () => {
+  test('rejected common', async () => {
     const thunk = new TestAsyncThunk(loginByUsername)
     thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }))
     const result = await thunk.callThunk({ username: '123', password: '123' })
@@ -36,7 +36,7 @@ describe('loginByUsername', () => {
   //   getState = jest.fn()
   // })
 
-  // test('successful login', async () => {
+  // test('successful common', async () => {
   //   const userValue = { username: '123', id: '1' }
   //   mockedAxios.post.mockReturnValue(Promise.resolve({ data: userValue }))
   //   const action = loginByUsername({ username: '123', password: '123' })
@@ -49,7 +49,7 @@ describe('loginByUsername', () => {
   //   expect(result.payload).toBe(userValue)
   // })
   //
-  // test('rejected login', async () => {
+  // test('rejected common', async () => {
   //   mockedAxios.post.mockReturnValue(Promise.resolve({ status: 403 }))
   //   const action = loginByUsername({ username: '123', password: '123' })
   //   const result = await action(dispatch, getState, undefined)
