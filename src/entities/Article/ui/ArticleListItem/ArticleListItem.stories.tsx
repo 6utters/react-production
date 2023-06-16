@@ -14,11 +14,10 @@ const article = {
   user: {
     id: '1',
     username: 'user 1',
-    avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg'
+    avatar:
+      'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg'
   },
-  type: [
-    'IT'
-  ],
+  type: ['IT'],
   blocks: [
     {
       id: '1',
@@ -89,7 +88,9 @@ export default {
   }
 } as ComponentMeta<typeof ArticleListItem>
 
-const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />
+const Template: ComponentStory<typeof ArticleListItem> = (args) => (
+  <ArticleListItem {...args} />
+)
 
 export const Big = Template.bind({})
 Big.args = {

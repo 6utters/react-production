@@ -4,11 +4,7 @@ module.exports = {
     es2021: true,
     jest: true
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'plugin:i18next/recommended'
-  ],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -17,22 +13,16 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react',
-    '@typescript-eslint',
-    'i18next',
-    'react-hooks',
-    'prod-path-plugin',
-    'unused-imports'
-  ],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'prod-path-plugin', 'unused-imports'],
   rules: {
-    'react/jsx-indent': [2, 2],
-    'react/jsx-indent-props': [2, 2],
     'unused-imports/no-unused-imports': 'error',
-    indent: [2, 2],
     semi: [2, 'never'],
-    'react/jsx-filename-extension': [1, {
-      extensions: ['.js', '.jsx', 'tsx']
-    }],
+    'react/jsx-filename-extension': [
+      1,
+      {
+        extensions: ['.js', '.jsx', 'tsx']
+      }
+    ],
     'react/react-in-jsx-scope': 'off',
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
@@ -45,21 +35,13 @@ module.exports = {
     'import/no-extraneous-dependencies': 'warn',
     'no-underscore-dangle': 'off',
     'comma-dangle': ['error', 'never'],
-    'i18next/no-literal-string': ['error', {
-      markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to', 'target', 'justify',
-        'align',
-        'direction',
-        'gap',
-        'border',
-        'role',
-        'as'
-      ]
-    }],
-    'max-len': ['error', {
-      ignoreComments: true,
-      code: 120
-    }],
+    'i18next/no-literal-string': [
+      'error',
+      {
+        markupOnly: true,
+        ignoreAttribute: ['data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap', 'border', 'role', 'as']
+      }
+    ],
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'react-hooks/rules-of-hooks': 'error',
@@ -83,18 +65,21 @@ module.exports = {
         alias: '@',
         ignoreImportPatterns: ['**/StoreProvider', '**/testing']
       }
-    ]
+    ],
+    'react/jsx-max-props-per-line': ['error', { maximum: 3 }]
   },
   globals: {
     __IS_DEV__: true,
     __API__: true,
     __PROJECT: true
   },
-  overrides: [{
-    files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
-    rules: {
-      'i18next/no-literal-string': 'off',
-      'max-len': 'off'
+  overrides: [
+    {
+      files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+        'max-len': 'off'
+      }
     }
-  }]
+  ]
 }

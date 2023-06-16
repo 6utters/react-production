@@ -1,26 +1,25 @@
-import {
-  FC, ReactNode, memo, useCallback, useEffect
-} from 'react'
+import { FC, ReactNode, memo, useCallback, useEffect } from 'react'
 import { Portal } from '@headlessui/react'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider'
+import {
+  AnimationProvider,
+  useAnimationLibs
+} from '@/shared/lib/components/AnimationProvider'
 import { Overlay } from '../Overlay/Overlay'
 import cls from './Drawer.module.scss'
 
 interface DrawerProps {
-    className?: string
-    children: ReactNode
-    isOpen?: boolean
-    onClose?: () => void
-    lazy?: boolean
+  className?: string
+  children: ReactNode
+  isOpen?: boolean
+  onClose?: () => void
+  lazy?: boolean
 }
 
 const height = window.innerHeight - 100
 
 export const DrawerContent: FC<DrawerProps> = memo((props) => {
-  const {
-    children, className, isOpen, onClose, lazy
-  } = props
+  const { children, className, isOpen, onClose, lazy } = props
   const { Gesture, Spring } = useAnimationLibs()
   const [{ y }, api] = Spring.useSpring(() => ({ y: height }))
 
@@ -64,7 +63,10 @@ export const DrawerContent: FC<DrawerProps> = memo((props) => {
       }
     },
     {
-      from: () => [0, y.get()], filterTaps: true, bounds: { top: 0 }, rubberband: true
+      from: () => [0, y.get()],
+      filterTaps: true,
+      bounds: { top: 0 },
+      rubberband: true
     }
   )
 

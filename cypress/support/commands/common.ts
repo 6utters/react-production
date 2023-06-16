@@ -2,7 +2,10 @@ import { USER_LOCALSTORAGE_KEY } from '../../../src/shared/const/localstorage'
 import { User } from '../../../src/entities/User'
 import { selectByTestId } from '../../e2e/helpers/selectByTestId'
 
-export const login = (username: string = 'testuser', password: string = 'testpassword') => {
+export const login = (
+  username: string = 'testuser',
+  password: string = 'testpassword'
+) => {
   cy.request({
     method: 'POST',
     url: 'http://localhost:8000/login',
@@ -18,11 +21,11 @@ export const login = (username: string = 'testuser', password: string = 'testpas
 
 export const getByTestId = (testId: string) => cy.get(selectByTestId(testId))
 
-  declare global {
-    namespace Cypress {
-      interface Chainable {
-        login(email?: string, password?: string): Chainable<User>
-        getByTestId(testId: string): Chainable<JQuery<HTMLElement>>
-      }
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      login(email?: string, password?: string): Chainable<User>
+      getByTestId(testId: string): Chainable<JQuery<HTMLElement>>
     }
   }
+}

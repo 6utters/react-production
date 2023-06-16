@@ -21,8 +21,9 @@ export const resetProfile = (profileId: string) => {
       country: 'Russia',
       city: 'Moscow',
       username: 'testUser',
-      avatar: 'https://images.hindustantimes.com/tech/img/2023/01/26/960x540/'
-          + '_b9c9f4a2-7cd1-11ea-b578-8bb50559d90e_1674714194736_1674714194736.jpg'
+      avatar:
+        'https://images.hindustantimes.com/tech/img/2023/01/26/960x540/' +
+        '_b9c9f4a2-7cd1-11ea-b578-8bb50559d90e_1674714194736_1674714194736.jpg'
     }
   }).then(({ body }) => {
     window.localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(body))
@@ -31,10 +32,10 @@ export const resetProfile = (profileId: string) => {
 }
 
 declare global {
-    namespace Cypress {
-        interface Chainable {
-            updateProfile(firstname: string, lastname: string): Chainable<void>
-            resetProfile(profileId: string): Chainable<void>
-        }
+  namespace Cypress {
+    interface Chainable {
+      updateProfile(firstname: string, lastname: string): Chainable<void>
+      resetProfile(profileId: string): Chainable<void>
     }
+  }
 }

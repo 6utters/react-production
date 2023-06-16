@@ -10,7 +10,7 @@ describe('Routing', () => {
       cy.visit('/profile/1')
       cy.get(selectByTestId('MainPage')).should('exist')
     })
-    it('should be redirected from the page that doesn\'t exist', () => {
+    it("should be redirected from the page that doesn't exist", () => {
       cy.visit('/random')
       cy.get(selectByTestId('NotFoundPage')).should('exist')
     })

@@ -27,27 +27,34 @@ interface ListBoxProps {
 
 export const ListBox: FC<ListBoxProps> = (props) => {
   const {
-    className, items, value, defaultValue, onChange, readonly, direction = 'bottom right', label
+    className,
+    items,
+    value,
+    defaultValue,
+    onChange,
+    readonly,
+    direction = 'bottom right',
+    label
   } = props
 
   const additionalClasses = [madDirectionClass[direction]]
 
   return (
-    <HStack gap="4">
+    <HStack gap='4'>
       {label && <span>{`${label}>`}</span>}
       <HListBox
         disabled={readonly}
-        as="div"
+        as='div'
         className={classNames(cls.ListBox, {}, [className, popupCls.Popup])}
         value={value}
         onChange={onChange}
       >
         <HListBox.Button disabled={readonly} className={popupCls.trigger}>
-          <Button disabled={readonly}>
-            {value ?? defaultValue}
-          </Button>
+          <Button disabled={readonly}>{value ?? defaultValue}</Button>
         </HListBox.Button>
-        <HListBox.Options className={classNames(cls.options, {}, additionalClasses)}>
+        <HListBox.Options
+          className={classNames(cls.options, {}, additionalClasses)}
+        >
           {items?.map((item) => (
             <HListBox.Option
               key={item.value}

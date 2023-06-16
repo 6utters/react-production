@@ -5,9 +5,9 @@ import { Loader } from '@/shared/ui/Loader'
 import { LoginFormAsync } from '../LoginForm/LoginForm.async'
 
 interface LoginModalProps {
-    className?: string
-    isOpen?: boolean
-    onCLose: () => void
+  className?: string
+  isOpen?: boolean
+  onCLose: () => void
 }
 
 export const LoginModal: FC<LoginModalProps> = (props) => {

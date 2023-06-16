@@ -16,9 +16,5 @@ export const BugButton: FC = () => {
     }
   }, [error])
 
-  return (
-    <Button onClick={onToggle}>
-      {t('Прокинуть ошибку')}
-    </Button>
-  )
+  return <Button onClick={onToggle}>{t('Прокинуть ошибку')}</Button>
 }

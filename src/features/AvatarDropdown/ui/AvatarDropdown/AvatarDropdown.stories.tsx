@@ -13,7 +13,9 @@ export default {
   decorators: [StoreDecorator({})]
 } as ComponentMeta<typeof AvatarDropdown>
 
-const Template: ComponentStory<typeof AvatarDropdown> = (args) => <AvatarDropdown {...args} />
+const Template: ComponentStory<typeof AvatarDropdown> = (args) => (
+  <AvatarDropdown {...args} />
+)
 
 export const Normal = Template.bind({})
 Normal.args = {}

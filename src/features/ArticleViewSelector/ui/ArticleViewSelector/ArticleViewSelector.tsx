@@ -9,9 +9,9 @@ import cls from './ArticleViewSelector.module.scss'
 import { ArticleView } from '@/entities/Article'
 
 interface ArticleViewSelectorProps {
-    className?: string
-    view: ArticleView
-    onViewClick?: (view: ArticleView) => void
+  className?: string
+  view: ArticleView
+  onViewClick?: (view: ArticleView) => void
 }
 
 const viewTypes = [
@@ -25,18 +25,18 @@ const viewTypes = [
   }
 ]
 
-export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo((props) => {
-  const { view, onViewClick, className } = props
-  const { t } = useTranslation()
+export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo(
+  (props) => {
+    const { view, onViewClick, className } = props
+    const { t } = useTranslation()
 
-  const onClick = (newView: ArticleView) => {
-    onViewClick?.(newView)
-  }
+    const onClick = (newView: ArticleView) => {
+      onViewClick?.(newView)
+    }
 
-  return (
-    <div className={classNames('', {}, [className])}>
-      {
-        viewTypes.map((viewType) => (
+    return (
+      <div className={classNames('', {}, [className])}>
+        {viewTypes.map((viewType) => (
           <Button
             theme={ButtonTheme.CLEAR}
             key={viewType.view}
@@ -44,11 +44,13 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo((props) =>
           >
             <Icon
               Svg={viewType.icon}
-              className={classNames('', { [cls.not_selected]: viewType.view !== view })}
+              className={classNames('', {
+                [cls.not_selected]: viewType.view !== view
+              })}
             />
           </Button>
-        ))
-      }
-    </div>
-  )
-})
+        ))}
+      </div>
+    )
+  }
+)

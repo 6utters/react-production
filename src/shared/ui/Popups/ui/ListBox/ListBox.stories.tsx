@@ -9,7 +9,11 @@ export default {
     backgroundColor: { control: 'color' }
   },
   decorators: [
-    (Story) => <div style={{ padding: '100px' }}><Story /></div>
+    (Story) => (
+      <div style={{ padding: '100px' }}>
+        <Story />
+      </div>
+    )
   ]
 } as ComponentMeta<typeof ListBox>
 
@@ -21,13 +25,16 @@ TopLeft.args = {
   value: 'value1',
   items: [
     {
-      content: 'content1', value: 'value1'
+      content: 'content1',
+      value: 'value1'
     },
     {
-      content: 'content2', value: 'value2'
+      content: 'content2',
+      value: 'value2'
     },
     {
-      content: 'content2', value: 'value3'
+      content: 'content2',
+      value: 'value3'
     }
   ]
 }
@@ -38,13 +45,16 @@ TopRight.args = {
   value: 'value1',
   items: [
     {
-      content: 'content1', value: 'value1'
+      content: 'content1',
+      value: 'value1'
     },
     {
-      content: 'content2', value: 'value2'
+      content: 'content2',
+      value: 'value2'
     },
     {
-      content: 'content2', value: 'value3'
+      content: 'content2',
+      value: 'value3'
     }
   ]
 }
@@ -55,13 +65,16 @@ BottomLeft.args = {
   value: 'value1',
   items: [
     {
-      content: 'content1', value: 'value1'
+      content: 'content1',
+      value: 'value1'
     },
     {
-      content: 'content2', value: 'value2'
+      content: 'content2',
+      value: 'value2'
     },
     {
-      content: 'content2', value: 'value3'
+      content: 'content2',
+      value: 'value3'
     }
   ]
 }
@@ -72,13 +85,16 @@ BottomRight.args = {
   value: 'value1',
   items: [
     {
-      content: 'content1', value: 'value1'
+      content: 'content1',
+      value: 'value1'
     },
     {
-      content: 'content2', value: 'value2'
+      content: 'content2',
+      value: 'value2'
     },
     {
-      content: 'content2', value: 'value3'
+      content: 'content2',
+      value: 'value3'
     }
   ]
 }

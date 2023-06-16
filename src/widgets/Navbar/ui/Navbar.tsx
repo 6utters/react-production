@@ -1,6 +1,4 @@
-import {
-  FC, memo, useCallback, useState
-} from 'react'
+import { FC, memo, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { classNames } from '@/shared/lib/classNames/classNames'
@@ -16,7 +14,7 @@ import cls from './Navbar.module.scss'
 import { getRouteArticleCreate } from '@/shared/const/router'
 
 interface NavbarProps {
-    className?: string
+  className?: string
 }
 
 export const Navbar: FC<NavbarProps> = memo(({ className }) => {
@@ -40,13 +38,10 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
           title={t('Production App')}
           theme={TextTheme.INVERTED}
         />
-        <AppLink
-          to={getRouteArticleCreate()}
-          theme={AppLinkTheme.SECONDARY}
-        >
+        <AppLink to={getRouteArticleCreate()} theme={AppLinkTheme.SECONDARY}>
           {t('Создать статью')}
         </AppLink>
-        <HStack gap="16" className={cls.actions}>
+        <HStack gap='16' className={cls.actions}>
           <NotificationButton />
           <AvatarDropdown />
         </HStack>
@@ -63,7 +58,9 @@ export const Navbar: FC<NavbarProps> = memo(({ className }) => {
       >
         {t('Войти')}
       </Button>
-      {isAuthModal && <LoginModal isOpen={isAuthModal} onCLose={onCloseModal} />}
+      {isAuthModal && (
+        <LoginModal isOpen={isAuthModal} onCLose={onCloseModal} />
+      )}
     </header>
   )
 })

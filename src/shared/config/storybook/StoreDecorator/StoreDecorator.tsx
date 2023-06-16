@@ -15,14 +15,14 @@ const defaultReducers: ReducerList = {
   articleDetailsPage: articleDetailsPageReducer
 }
 
-export const StoreDecorator = (
-  initialState: DeepPartial<StateSchema>,
-  asyncReducers?: ReducerList
-) => (StoryComponent: Story) => (
-  <StoreProvider
-    initialState={initialState}
-    asyncReducers={{ ...asyncReducers, ...defaultReducers }}
-  >
-    <StoryComponent />
-  </StoreProvider>
-)
+export const StoreDecorator =
+  (initialState: DeepPartial<StateSchema>, asyncReducers?: ReducerList) =>
+  (StoryComponent: Story) =>
+    (
+      <StoreProvider
+        initialState={initialState}
+        asyncReducers={{ ...asyncReducers, ...defaultReducers }}
+      >
+        <StoryComponent />
+      </StoreProvider>
+    )

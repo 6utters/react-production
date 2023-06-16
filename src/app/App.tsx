@@ -1,6 +1,4 @@
-import {
-  FC, Suspense, useEffect
-} from 'react'
+import { FC, Suspense, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppRouter } from './providers/router'
@@ -18,9 +16,9 @@ export const App: FC = () => {
 
   return (
     <div className={classNames('app', {}, [])}>
-      <Suspense fallback="">
+      <Suspense fallback=''>
         <Navbar />
-        <div className="content-page">
+        <div className='content-page'>
           <Sidebar />
           {inited && <AppRouter />}
         </div>
