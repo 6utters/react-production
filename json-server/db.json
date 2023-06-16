@@ -51,6 +51,9 @@
       "username": "admin",
       "password": "123",
       "roles": ["ADMIN"],
+      "features": {
+        "isArticleRatingEnabled": true
+      },
       "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
     },
     {
@@ -58,6 +61,9 @@
       "username": "user",
       "password": "123",
       "roles": ["USER"],
+      "features": {
+        "isArticleRatingEnabled": false
+      },
       "avatar": "https://images.hindustantimes.com/tech/img/2023/01/26/960x540/_b9c9f4a2-7cd1-11ea-b578-8bb50559d90e_1674714194736_1674714194736.jpg"
     },
     {
@@ -65,6 +71,9 @@
       "username": "manager",
       "password": "123",
       "roles": ["MANAGER"],
+      "features": {
+        "isArticleRatingEnabled": false
+      },
       "avatar": "https://images.hindustantimes.com/tech/img/2023/01/26/960x540/_b9c9f4a2-7cd1-11ea-b578-8bb50559d90e_1674714194736_1674714194736.jpg"
     },
     {
@@ -72,6 +81,9 @@
       "username": "testuser",
       "password": "testpassword",
       "roles": ["ADMIN"],
+      "features": {
+        "isArticleRatingEnabled": true
+      },
       "avatar": "https://images.hindustantimes.com/tech/img/2023/01/26/960x540/_b9c9f4a2-7cd1-11ea-b578-8bb50559d90e_1674714194736_1674714194736.jpg"
     }
   ],
