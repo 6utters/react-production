@@ -4,11 +4,16 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppRouter } from './providers/router'
 import { Navbar } from '@/widgets/Navbar'
 import { Sidebar } from '@/widgets/Sidebar'
-import { getUserInited, userActions } from '@/entities/User'
+import { getUserInited, useJsonSettingsByKey, userActions } from '@/entities/User'
 
 export const App: FC = () => {
   const dispatch = useDispatch()
   const inited = useSelector(getUserInited)
+  const themeFromSettings = useJsonSettingsByKey('theme')
+  const isFirstVisit = useJsonSettingsByKey('isFirstVisit')
+
+  console.log('themeFromSettings:', themeFromSettings)
+  console.log('isFirstVisit:', isFirstVisit)
 
   useEffect(() => {
     dispatch(userActions.initAuthData())
