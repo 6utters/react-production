@@ -9,3 +9,4 @@ export { useJsonSettingsByKey } from './model/selectors/getUserJsonSettingsByKey
 export { getUserRoles } from './model/selectors/getUserRoles/getUserRoles'
 export { UserRole } from './model/consts/userConsts'
 export { saveJsonSettings } from './model/services/saveJsonSettings/saveJsonSettings'
+export { initAuthData } from './model/services/initAuthData/initAuthData'
