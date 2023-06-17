@@ -1,9 +1,6 @@
 import { FC, memo, useCallback } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import {
-  DynamicModuleLoader,
-  ReducerList
-} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Page } from '@/widgets/Page'
 import { ArticlesInfiniteList } from '../ArticlesInfiniteList/ArticlesInfiniteList'
@@ -11,6 +8,7 @@ import { articlesPageReducer } from '../../model/slice/articlesPageSlice'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 import cls from './ArticlesPage.module.scss'
+import { ArticlePageGreeting } from '@/features/ArticlePageGreeting'
 
 interface ArticlesPageProps {
   className?: string
@@ -36,6 +34,7 @@ const ArticlesPage: FC<ArticlesPageProps> = ({ className }) => {
       >
         <ArticlesPageFilters />
         <ArticlesInfiniteList className={cls.list} />
+        <ArticlePageGreeting />
       </Page>
     </DynamicModuleLoader>
   )
