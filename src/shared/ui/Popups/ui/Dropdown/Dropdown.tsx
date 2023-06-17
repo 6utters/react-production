@@ -8,34 +8,35 @@ import cls from './Dropdown.module.scss'
 import popupCls from '../../styles/Popup.module.scss'
 
 export interface DropdownItem {
-    disabled?: boolean
-    content?: ReactNode
-    onClick?: () => void
-    href?: string
+  disabled?: boolean
+  content?: ReactNode
+  onClick?: () => void
+  href?: string
 }
 
 interface DropdownProps {
-    className?: string
-    items: DropdownItem[]
-    trigger: ReactNode
-    direction?: DropdownDirection
+  className?: string
+  items: DropdownItem[]
+  trigger: ReactNode
+  direction?: DropdownDirection
 }
 
 export const Dropdown: FC<DropdownProps> = (props) => {
-  const {
-    className, trigger, items, direction = 'bottom right'
-  } = props
+  const { className, trigger, items, direction = 'bottom right' } = props
 
   const additionalClasses = [madDirectionClass[direction]]
 
   return (
-    <Menu as="div" className={classNames(cls.Dropdown, {}, [className, popupCls.Popup])}>
+    <Menu
+      as='div'
+      className={classNames(cls.Dropdown, {}, [className, popupCls.Popup])}
+    >
       <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
       <Menu.Items className={classNames(cls.menu, {}, additionalClasses)}>
         {items.map((item, index) => {
-          const content = ({ active }: {active: boolean}) => (
+          const content = ({ active }: { active: boolean }) => (
             <button
-              type="button"
+              type='button'
               className={classNames(cls.item, { [popupCls.active]: active })}
               onClick={item.onClick}
               disabled={item.disabled}

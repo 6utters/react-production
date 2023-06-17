@@ -8,9 +8,10 @@ import { articlesPageReducer } from '../../model/slice/articlesPageSlice'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 import cls from './ArticlesPage.module.scss'
+import { ArticlePageGreeting } from '@/features/ArticlePageGreeting'
 
 interface ArticlesPageProps {
-    className?: string
+  className?: string
 }
 
 const reducers: ReducerList = {
@@ -27,11 +28,13 @@ const ArticlesPage: FC<ArticlesPageProps> = ({ className }) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page
+        data-testid='ArticlesPage'
         onScrollEnd={onLoadNextPart}
         className={classNames(cls.ArticlesPage, {}, [className])}
       >
         <ArticlesPageFilters />
         <ArticlesInfiniteList className={cls.list} />
+        <ArticlePageGreeting />
       </Page>
     </DynamicModuleLoader>
   )

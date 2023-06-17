@@ -1,11 +1,12 @@
-export {
-  userReducer,
-  userActions
-} from './model/slice/userSlice'
+export { userReducer, userActions } from './model/slice/userSlice'
 export type { UserSchema, User } from './model/types/user'
 export { getAuthData } from './model/selectors/getAuthData/getAuthData'
 export { getUserInited } from './model/selectors/getUserInited/getUserInited'
 export { getIsUserAdmin } from './model/selectors/getIsUserAdmin/getIsUserAdmin'
 export { getIsUserManager } from './model/selectors/getIsUserManager/getIsUserManager'
+export { useJsonSettings } from './model/selectors/getUserJsonSettings/getUserJsonSettings'
+export { useJsonSettingsByKey } from './model/selectors/getUserJsonSettingsByKey/getUserJsonSettingsByKey'
 export { getUserRoles } from './model/selectors/getUserRoles/getUserRoles'
 export { UserRole } from './model/consts/userConsts'
+export { saveJsonSettings } from './model/services/saveJsonSettings/saveJsonSettings'
+export { initAuthData } from './model/services/initAuthData/initAuthData'

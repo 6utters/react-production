@@ -10,7 +10,7 @@ import '@/app/styles/index.scss'
 const container = document.getElementById('root')
 
 if (!container) {
-  throw new Error('Container root hasn\'t been found')
+  throw new Error("Container root hasn't been found")
 }
 const root = createRoot(container)
 root.render(

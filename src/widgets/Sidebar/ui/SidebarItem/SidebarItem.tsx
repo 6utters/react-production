@@ -8,8 +8,8 @@ import { SidebarItemType } from '../../model/types/sidebar'
 import cls from './SidebarItem.module.scss'
 
 interface SidebarItemProps {
-    item: SidebarItemType
-    collapsed: boolean
+  item: SidebarItemType
+  collapsed: boolean
 }
 
 export const SidebarItem: FC<SidebarItemProps> = memo((props) => {

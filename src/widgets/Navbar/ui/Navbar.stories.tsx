@@ -25,8 +25,11 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]
 
 export const LogInned = Template.bind({})
 LogInned.args = {}
-LogInned.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-  user: {
-    authData: {}
-  }
-})]
+LogInned.decorators = [
+  ThemeDecorator(Theme.DARK),
+  StoreDecorator({
+    user: {
+      authData: {}
+    }
+  })
+]

@@ -5,7 +5,7 @@ import { getAuthData, getUserRoles, UserRole } from '@/entities/User'
 import { getRouteForbidden, getRouteMain } from '@/shared/const/router'
 
 interface RequireAuthProps {
-    children: JSX.Element
+  children: JSX.Element
   roles?: UserRole[]
 }
 
@@ -27,7 +27,9 @@ export const RequireAuth: FC<RequireAuthProps> = ({ children, roles }) => {
   }
 
   if (!hasRequiredRoles) {
-    return <Navigate to={getRouteForbidden()} state={{ from: location }} replace />
+    return (
+      <Navigate to={getRouteForbidden()} state={{ from: location }} replace />
+    )
   }
 
   return children
