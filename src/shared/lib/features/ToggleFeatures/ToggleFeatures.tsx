@@ -1,6 +1,6 @@
-import { FC, ReactElement } from 'react'
+import { ReactElement } from 'react'
 import { FeatureFlags } from '@/shared/types/featureFlags'
-import { getFeatureFlags } from '../setGetFeatures'
+import { getFeatureFlag } from '../setGetFeatures'
 
 interface ToggleFeaturesProps {
   feature: keyof FeatureFlags
@@ -8,10 +8,10 @@ interface ToggleFeaturesProps {
   off: ReactElement
 }
 
-export const ToggleFeatures: FC<ToggleFeaturesProps> = (props) => {
-  const { off, on, feature } = props
+export const ToggleFeatures = (props: ToggleFeaturesProps) => {
+  const { on, off, feature } = props
 
-  if (getFeatureFlags(feature)) {
+  if (getFeatureFlag(feature)) {
     return on
   }
 

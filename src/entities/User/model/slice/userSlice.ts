@@ -32,6 +32,8 @@ const userSlice = createSlice({
         }
       })
       .addCase(initAuthData.fulfilled, (state, action: PayloadAction<User>) => {
+        console.log('action.payload:', action.payload)
+        console.log('action.payload.features:', action.payload.features)
         state.authData = action.payload
         setFeatureFlags(action.payload.features)
         state._inited = true

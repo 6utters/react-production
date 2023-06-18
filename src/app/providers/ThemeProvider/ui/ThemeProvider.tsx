@@ -12,6 +12,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
   const { initialTheme, children } = props
   const { theme: defaultTheme } = useJsonSettings()
   const [isThemeInited, setIsThemeInited] = useState(false)
+
   const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme || Theme.LIGHT)
 
   useEffect(() => {
