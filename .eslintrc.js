@@ -50,7 +50,9 @@ module.exports = {
           'gap',
           'border',
           'role',
-          'as'
+          'as',
+          'color',
+          'variant'
         ]
       }
     ],

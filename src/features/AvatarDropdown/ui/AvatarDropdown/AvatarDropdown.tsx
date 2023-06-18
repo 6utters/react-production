@@ -2,14 +2,9 @@ import { useTranslation } from 'react-i18next'
 import { memo, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Avatar } from '@/shared/ui/Avatar'
-import { Dropdown } from '@/shared/ui/Popups'
-import {
-  getAuthData,
-  getIsUserAdmin,
-  getIsUserManager,
-  userActions
-} from '@/entities/User'
+import { Avatar } from '@/shared/ui/deprecated/Avatar'
+import { Dropdown } from '@/shared/ui/deprecated/Popups'
+import { getAuthData, getIsUserAdmin, getIsUserManager, userActions } from '@/entities/User'
 import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router'
 
 interface AvatarDropdownProps {

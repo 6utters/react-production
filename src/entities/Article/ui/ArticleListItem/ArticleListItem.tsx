@@ -1,19 +1,19 @@
 import { FC, HTMLAttributeAnchorTarget, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Text } from '@/shared/ui/Text'
-import { Icon } from '@/shared/ui/Icon'
+import { Text } from '@/shared/ui/deprecated/Text'
+import { Icon } from '@/shared/ui/deprecated/Icon'
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg'
-import { Card } from '@/shared/ui/Card'
-import { Avatar } from '@/shared/ui/Avatar'
-import { Button, ButtonTheme } from '@/shared/ui/Button'
-import { AppLink } from '@/shared/ui/AppLink'
+import { Card } from '@/shared/ui/deprecated/Card'
+import { Avatar } from '@/shared/ui/deprecated/Avatar'
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button'
+import { AppLink } from '@/shared/ui/deprecated/AppLink'
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { Article, ArticleTextBlock } from '../../model/types/article'
 import { getRouteArticleDetails } from '@/shared/const/router'
-import { AppImage } from '@/shared/ui/AppImage'
-import { Skeleton } from '@/shared/ui/Skeleton'
+import { AppImage } from '@/shared/ui/deprecated/AppImage'
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton'
 import cls from './ArticleListItem.module.scss'
 
 interface ArticleListItemProps {
@@ -36,14 +36,9 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
   )
 
   if (view === ArticleView.BIG) {
-    const textBlock = article.blocks.find(
-      (block) => block.type === ArticleBlockType.TEXT
-    ) as ArticleTextBlock
+    const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock
     return (
-      <div
-        className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
-        data-testid='ArticleListItem'
-      >
+      <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])} data-testid='ArticleListItem'>
         <Card>
           <div className={cls.header}>
             <Avatar size={30} src={article.user.avatar} />
@@ -58,12 +53,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
             className={cls.img}
             alt={article.title}
           />
-          {textBlock && (
-            <ArticleTextBlockComponent
-              block={textBlock}
-              className={cls.text_block}
-            />
-          )}
+          {textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.text_block} />}
           <div className={cls.footer}>
             <AppLink to={getRouteArticleDetails(article.id)}>
               <Button theme={ButtonTheme.OUTLINE}>{t('Читать далее')}</Button>

@@ -2,18 +2,12 @@ import { FC, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Input } from '@/shared/ui/Input'
-import { Button, ButtonTheme } from '@/shared/ui/Button'
-import {
-  DynamicModuleLoader,
-  ReducerList
-} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { Input } from '@/shared/ui/deprecated/Input'
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button'
+import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { HStack } from '@/shared/ui/Stack'
-import {
-  addCommentFormActions,
-  addCommentFormReducer
-} from '../../model/slice/addCommentFormSlice'
+import { HStack } from '@/shared/ui/deprecated/Stack'
+import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice'
 import { getAddCommentFormText } from '../../model/selectors/getAddCommentFormText/getAddCommentFormText'
 import { getAddCommentFormError } from '../../model/selectors/getAddCommentFormError/getAddCommentFormError'
 import cls from './AddCommentForm.module.scss'
@@ -61,11 +55,7 @@ const AddCommentForm: FC<AddCommentFormProps> = (props) => {
           onChange={onCommentTextChange}
           data-testid='AddCommentForm.Input'
         />
-        <Button
-          onClick={onSendHandler}
-          theme={ButtonTheme.OUTLINE}
-          data-testid='AddCommentForm.Button'
-        >
+        <Button onClick={onSendHandler} theme={ButtonTheme.OUTLINE} data-testid='AddCommentForm.Button'>
           {t('Отправить')}
         </Button>
       </HStack>

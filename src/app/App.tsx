@@ -10,6 +10,7 @@ import { PageLoader } from '@/widgets/PageLoader'
 import { ToggleFeatures } from '@/shared/lib/features'
 import { MainLayout } from '@/shared/layouts'
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme'
+import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 
 export const App: FC = () => {
   const dispatch = useAppDispatch()
@@ -45,7 +46,11 @@ export const App: FC = () => {
               header={<Navbar />}
               content={<AppRouter />}
               sidebar={<Sidebar />}
-              toolbar={<div>ToolBar</div>}
+              toolbar={
+                <div>
+                  <ThemeSwitcher />
+                </div>
+              }
             />
           </Suspense>
         </div>
