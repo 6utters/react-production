@@ -30,7 +30,11 @@ export const Page: FC<PageProps> = memo((props) => {
   const scrollPosition = useSelector((state: StateSchema) => getScrollByPath(state, pathname))
 
   useInfiniteScroll({
-    wrapperRef,
+    wrapperRef: toggleFeatures({
+      name: 'isAppRedesigned',
+      on: () => undefined,
+      off: () => wrapperRef
+    }),
     triggerRef,
     callback: onScrollEnd
   })
