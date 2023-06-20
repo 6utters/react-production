@@ -4,9 +4,9 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { DropdownDirection } from '@/shared/types/ui'
 import { HStack } from '../../../../redesigned/Stack/HStack/HStack'
 import { Button } from '../../../Button/Button'
-import { madDirectionClass } from '../../styles/consts'
 import cls from './ListBox.module.scss'
 import popupCls from '../../styles/Popup.module.scss'
+import { mapDirectionClass } from '../../styles/consts'
 
 export interface ListBoxItem {
   value: string
@@ -25,14 +25,10 @@ interface ListBoxProps {
   label?: string
 }
 
-/**
- * Use new UI components from redesigned
- * @deprecated
- */
 export const ListBox: FC<ListBoxProps> = (props) => {
   const { className, items, value, defaultValue, onChange, readonly, direction = 'bottom right', label } = props
 
-  const additionalClasses = [madDirectionClass[direction]]
+  const additionalClasses = [mapDirectionClass[direction], popupCls.menu]
 
   return (
     <HStack gap='4'>

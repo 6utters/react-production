@@ -6,10 +6,6 @@ interface PortalProps {
   element?: HTMLElement
 }
 
-/**
- * Use new UI components from redesigned
- * @deprecated
- */
 export const Portal: FC<PortalProps> = (props) => {
   const { children, element = document.body } = props
   return createPortal(children, element)

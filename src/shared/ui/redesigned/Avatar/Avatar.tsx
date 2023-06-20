@@ -2,7 +2,7 @@ import { CSSProperties, FC, memo, useMemo } from 'react'
 import { Mods, classNames } from '@/shared/lib/classNames/classNames'
 import { AppImage } from '../../redesigned/AppImage'
 import UserIcon from '../../../assets/icons/user-filled.svg'
-import { Icon } from '../../deprecated/Icon'
+import { Icon } from '../Icon'
 import { Skeleton } from '../Skeleton'
 import cls from './Avatar.module.scss'
 
@@ -11,14 +11,9 @@ interface AvatarProps {
   src?: string
   size?: number
   alt?: string
-  fallbackInverted?: boolean
 }
 
-/**
- * Use new UI components from redesigned
- * @deprecated
- */
-export const Avatar: FC<AvatarProps> = memo(({ className, src, size, alt, fallbackInverted }) => {
+export const Avatar: FC<AvatarProps> = memo(({ className, src, size, alt }) => {
   const mods: Mods = {}
 
   const styles = useMemo<CSSProperties>(
@@ -30,7 +25,7 @@ export const Avatar: FC<AvatarProps> = memo(({ className, src, size, alt, fallba
   )
 
   const fallback = <Skeleton width={size} height={size} border='50%' />
-  const errorFallback = <Icon inverted={fallbackInverted} width={size} height={size} Svg={UserIcon} />
+  const errorFallback = <Icon width={size} height={size} Svg={UserIcon} />
 
   return (
     <AppImage
