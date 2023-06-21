@@ -5,10 +5,10 @@ import { AppLink as AppLinkDeprecated, AppLinkTheme } from '@/shared/ui/deprecat
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { getAuthData } from '@/entities/User'
 import { SidebarItemType } from '../../model/types/sidebar'
-import cls from './SidebarItem.module.scss'
 import { ToggleFeatures } from '@/shared/lib/features'
 import { AppLink } from '@/shared/ui/redesigned/AppLink'
 import { Icon } from '@/shared/ui/redesigned/Icon'
+import cls from './SidebarItem.module.scss'
 
 interface SidebarItemProps {
   item: SidebarItemType
