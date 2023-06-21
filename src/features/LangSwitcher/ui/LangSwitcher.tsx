@@ -20,7 +20,11 @@ export const LangSwitcher: FC<LangSwitcherProps> = memo(({ className, short }) =
   return (
     <ToggleFeatures
       feature='isAppRedesigned'
-      on={<Button variant='clear'>{t(short ? 'Короткий Язык' : 'Язык')}</Button>}
+      on={
+        <Button onClick={toggle} variant='clear'>
+          {t(short ? 'Короткий Язык' : 'Язык')}
+        </Button>
+      }
       off={
         <ButtonDeprecated className={classNames('', {}, [className])} theme={ButtonTheme.CLEAR} onClick={toggle}>
           {t(short ? 'Короткий Язык' : 'Язык')}

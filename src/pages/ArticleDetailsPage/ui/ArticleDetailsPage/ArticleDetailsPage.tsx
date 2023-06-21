@@ -10,6 +10,10 @@ import { articleDetailsPageReducer } from '../../model/slices'
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments'
 import { ArticleRating } from '@/features/ArticleRating'
+import { ToggleFeatures } from '@/shared/lib/features'
+import { StickyContentLayout } from '@/shared/layouts'
+import { DetailsContainer } from '../DetailsContainer/DetailsContainer'
+import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer'
 import cls from './ArticleDetailsPage.module.scss'
 
 interface ArticleDetailsPageProps {
@@ -29,15 +33,35 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <VStack gap='16' max>
-          <ArticleDetailsPageHeader />
-          <ArticleDetails id={id} />
-          <ArticleRating articleId={id} />
-          <ArticleRecommendationsList />
-          <ArticleDetailsComments id={id} />
-        </VStack>
-      </Page>
+      <ToggleFeatures
+        feature='isAppRedesigned'
+        on={
+          <StickyContentLayout
+            center={
+              <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+                <VStack gap='16' max>
+                  <DetailsContainer />
+                  <ArticleRating articleId={id} />
+                  <ArticleRecommendationsList />
+                  <ArticleDetailsComments id={id} />
+                </VStack>
+              </Page>
+            }
+            right={<AdditionalInfoContainer />}
+          />
+        }
+        off={
+          <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <VStack gap='16' max>
+              <ArticleDetailsPageHeader />
+              <ArticleDetails id={id} />
+              <ArticleRating articleId={id} />
+              <ArticleRecommendationsList />
+              <ArticleDetailsComments id={id} />
+            </VStack>
+          </Page>
+        }
+      />
     </DynamicModuleLoader>
   )
 }

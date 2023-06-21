@@ -38,5 +38,8 @@
   "Новый": "New",
   "Старый": "Old",
   "Вариант интерфейса": "Interface variant",
-  "Настройки": "Settings"
+  "Настройки": "Settings",
+  "{{count}} Просмотров_zero": "0 views",
+  "{{count}} Просмотров_one": "{{count}} view",
+  "{{count}} Просмотров_other": "{{count}} views"
 }
