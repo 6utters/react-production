@@ -6,6 +6,15 @@
   overflow: auto;
 }
 
+.CodeRedesigned {
+  position: relative;
+  border: 1px solic var(--accent-redesigned);
+  padding: 20px;
+  background: var(--light-bg-redesigned);
+  overflow: auto;
+  border-radius: 16px;
+}
+
 .copy_btn {
   position: absolute;
   top: 20px;
