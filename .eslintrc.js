@@ -53,7 +53,8 @@ module.exports = {
           'as',
           'color',
           'variant',
-          'size'
+          'size',
+          'wrap'
         ]
       }
     ],
