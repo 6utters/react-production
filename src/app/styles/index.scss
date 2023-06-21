@@ -9,11 +9,11 @@ body {
   color: var(--primary-color);
 }
 
-.app,
-.app_drawer {
+.app {
   min-height: 100vh;
   background: var(--bg-color);
   color: var(--primary-color);
+  font: var(--font-m);
 }
 
 .app_redesigned {

@@ -23,6 +23,18 @@
   z-index: var(--modal-z-index);
 }
 
+.modal_new {
+  .content {
+    background: var(--light-bg-redesigned);
+  }
+}
+
+.modal_old {
+  .content {
+    background: var(--bg-color);
+  }
+}
+
 .opened {
   pointer-events: auto;
   opacity: 1;

@@ -30,3 +30,15 @@
   touch-action: none;
   padding: 15px;
 }
+
+.drawer_new {
+  .sheet {
+    background: var(--light-bg-redesigned);
+  }
+}
+
+.drawer_old {
+  .sheet {
+    background: var(--bg-color);
+  }
+}

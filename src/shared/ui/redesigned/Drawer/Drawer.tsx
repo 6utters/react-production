@@ -1,9 +1,10 @@
 import { FC, ReactNode, memo, useCallback, useEffect } from 'react'
-import { Portal } from '@headlessui/react'
+import { Portal } from '../Portal/Portal'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider'
-import { Overlay } from '../../redesigned/Overlay/Overlay'
+import { Overlay } from '../Overlay/Overlay'
 import cls from './Drawer.module.scss'
+import { toggleFeatures } from '@/shared/lib/features'
 
 interface DrawerProps {
   className?: string
@@ -15,10 +16,6 @@ interface DrawerProps {
 
 const height = window.innerHeight - 100
 
-/**
- * Use new UI components from redesigned
- * @deprecated
- */
 export const DrawerContent: FC<DrawerProps> = memo((props) => {
   const { children, className, isOpen, onClose, lazy } = props
   const { Gesture, Spring } = useAnimationLibs()
@@ -72,8 +69,17 @@ export const DrawerContent: FC<DrawerProps> = memo((props) => {
   const display = y.to((py) => (py < height ? 'block' : 'none'))
 
   return (
-    <Portal>
-      <div className={classNames(cls.Drawer, {}, [className])}>
+    <Portal element={document.getElementById('app') ?? document.body}>
+      <div
+        className={classNames(cls.Drawer, {}, [
+          className,
+          toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => cls.drawer_new,
+            off: () => cls.drawer_old
+          })
+        ])}
+      >
         <Overlay onClick={close} />
         <Spring.a.div
           className={cls.sheet}
