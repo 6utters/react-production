@@ -34,11 +34,7 @@ const ArticlesPage: FC<ArticlesPageProps> = ({ className }) => {
       feature='isAppRedesigned'
       on={
         <StickyContentLayout
-          left={
-            <div>
-              <ViewSelectorContainer />
-            </div>
-          }
+          left={<ViewSelectorContainer />}
           center={
             <Page
               data-testid='ArticlesPage'

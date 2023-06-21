@@ -4,9 +4,11 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { DropdownDirection } from '@/shared/types/ui'
 import { HStack } from '../../../../redesigned/Stack/HStack/HStack'
 import { Button } from '../../../Button/Button'
-import cls from './ListBox.module.scss'
 import popupCls from '../../styles/Popup.module.scss'
 import { mapDirectionClass } from '../../styles/consts'
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg'
+import cls from './ListBox.module.scss'
+import { Icon } from '../../../Icon'
 
 export interface ListBoxItem<T extends string> {
   value: string
@@ -43,7 +45,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
         onChange={onChange}
       >
         <HListBox.Button disabled={readonly} className={popupCls.trigger}>
-          <Button variant='filled' disabled={readonly}>
+          <Button variant='filled' disabled={readonly} addonRight={<Icon Svg={ArrowIcon} />}>
             {selectedItem?.content ?? defaultValue}
           </Button>
         </HListBox.Button>

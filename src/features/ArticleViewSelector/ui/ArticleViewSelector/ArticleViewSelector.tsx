@@ -9,7 +9,6 @@ import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon'
 import { ArticleView } from '@/entities/Article'
 import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features'
 import cls from './ArticleViewSelector.module.scss'
-import { Button } from '@/shared/ui/redesigned/Button'
 import { Icon } from '@/shared/ui/redesigned/Icon'
 import { Card } from '@/shared/ui/redesigned/Card'
 import { HStack } from '@/shared/ui/redesigned/Stack'
@@ -53,18 +52,14 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo((props) =>
         <Card border='rounded' className={classNames(cls.ArticleViewSelectorRedesigned, {}, [className])}>
           <HStack gap='8'>
             {viewTypes.map((viewType) => (
-              <Button variant='clear' key={viewType.view} onClick={() => onClick(viewType.view)}>
-                <Icon
-                  clickable
-                  onClick={() => onClick(viewType.view)}
-                  width={24}
-                  height={24}
-                  Svg={viewType.icon}
-                  className={classNames('', {
-                    [cls.not_selected]: viewType.view !== view
-                  })}
-                />
-              </Button>
+              <Icon
+                clickable
+                onClick={() => onClick(viewType.view)}
+                Svg={viewType.icon}
+                className={classNames('', {
+                  [cls.not_selected]: viewType.view !== view
+                })}
+              />
             ))}
           </HStack>
         </Card>
