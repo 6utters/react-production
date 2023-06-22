@@ -3,6 +3,7 @@ import { classNames, Mods } from '@/shared/lib/classNames/classNames'
 import cls from './Button.module.scss'
 
 export type ButtonVariant = 'clear' | 'outline' | 'filled'
+export type ButtonColor = 'normal' | 'success' | 'error'
 
 export type ButtonSize = 'm' | 'l' | 'xl'
 
@@ -11,6 +12,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant
   square?: boolean
   size?: ButtonSize
+  color?: ButtonColor
   disabled?: boolean
   children?: ReactNode
   fullWidth?: boolean
@@ -27,6 +29,7 @@ export const Button: FC<ButtonProps> = memo((props) => {
     variant = 'outline',
     disabled,
     fullWidth,
+    color = 'normal',
     size = 'm',
     square,
     ...otherProps
@@ -43,7 +46,7 @@ export const Button: FC<ButtonProps> = memo((props) => {
     <button
       type='button'
       disabled={disabled}
-      className={classNames(cls.Button, mods, [className, cls[variant], cls[size]])}
+      className={classNames(cls.Button, mods, [className, cls[color], cls[variant], cls[size]])}
       {...otherProps}
     >
       <div className={cls.addon_left}>{addonLeft}</div>
