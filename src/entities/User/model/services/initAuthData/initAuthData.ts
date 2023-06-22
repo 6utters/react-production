@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from '@/app/providers/StoreProvider'
 import { User } from '../../types/user'
-import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage'
+import { LOCAL_STORAGE_LAST_DESIGN_KEY, USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage'
 import { getUserDataById } from '../../../api/userApi'
 
 export const initAuthData = createAsyncThunk<User, void, ThunkConfig<string>>(
@@ -17,6 +17,8 @@ export const initAuthData = createAsyncThunk<User, void, ThunkConfig<string>>(
 
     try {
       const response = await dispatch(getUserDataById(userId)).unwrap()
+
+      localStorage.setItem(LOCAL_STORAGE_LAST_DESIGN_KEY, response.features?.isAppRedesigned ? 'new' : 'old')
 
       return response
     } catch (e) {
