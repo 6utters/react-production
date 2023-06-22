@@ -18,11 +18,11 @@ import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import { getArticleDetailsIsLoading } from '../../model/selectors/getArticleDetailsIsLoading/getArticleDetailsIsLoading'
 import { getArticleDetailsData } from '../../model/selectors/getArticleDetailsData/getArticleDetailsData'
 import { getArticleDetailsError } from '../../model/selectors/getArticleDetailsError/getArticleDetailsError'
-import cls from './ArticleDetails.module.scss'
 import { renderArticleBlock } from './renderBlock'
-import { ToggleFeatures } from '@/shared/lib/features'
+import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features'
 import { AppImage } from '@/shared/ui/redesigned/AppImage'
-import { Skeleton } from '@/shared/ui/redesigned/Skeleton'
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton'
+import cls from './ArticleDetails.module.scss'
 
 interface ArticleDetailsProps {
   className?: string
@@ -65,7 +65,7 @@ const Redesigned = () => {
       <Text bold size='l' title={article?.title} />
       <Text title={article?.subtitle} />
       <AppImage
-        fallback={<Skeleton width='100%' height={420} border='16px' />}
+        fallback={<SkeletonRedesigned width='100%' height={420} border='16px' />}
         className={cls.img}
         src={article?.img}
       />
@@ -85,14 +85,20 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
 
   let content
 
+  const Skeleton = toggleFeatures({
+    name: 'isAppRedesigned',
+    on: () => SkeletonRedesigned,
+    off: () => SkeletonDeprecated
+  })
+
   if (isLoading) {
     content = (
-      <>
-        <SkeletonDeprecated className={cls.avatar} width={200} height={200} border='50%' />
-        <SkeletonDeprecated className={cls.title} width={300} height={32} />
-        <SkeletonDeprecated className={cls.skeleton} width='100%' height={200} />
-        <SkeletonDeprecated className={cls.skeleton} width='100%' height={200} />
-      </>
+      <VStack gap='16' max>
+        <Skeleton className={cls.avatar} width={200} height={200} border='50%' />
+        <Skeleton className={cls.title} width={300} height={32} />
+        <Skeleton className={cls.skeleton} width='100%' height={200} />
+        <Skeleton className={cls.skeleton} width='100%' height={200} />
+      </VStack>
     )
   } else if (error) {
     content = <TextDeprecated title={t('Произошла ошибка при загрузке статьи')} align={TextAlign.CENTER} />
