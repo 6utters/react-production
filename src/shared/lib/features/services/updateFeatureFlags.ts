@@ -28,7 +28,7 @@ export const updateFeatureFlag = createAsyncThunk<void, UpdateFeatureFlagOptions
       )
 
       setFeatureFlags(allFeatures)
-
+      window.location.reload()
       return undefined
     } catch (e) {
       console.log(e)
