@@ -5,15 +5,19 @@
   display: flex;
   align-items: center;
   padding: 20px;
+}
 
-  .links,
-  .actions {
-    margin-left: auto;
-  }
+.NavbarRedesigned {
+  padding: 16px;
+}
 
-  .main_link {
-    margin-right: 15px;
-  }
+.links,
+.actions {
+  margin-left: auto;
+}
+
+.main_link {
+  margin-right: 15px;
 }
 
 .app_name {

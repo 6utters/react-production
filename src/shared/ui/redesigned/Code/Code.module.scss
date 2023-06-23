@@ -1,0 +1,26 @@
+.Code {
+  position: relative;
+  border: 1px solic var(--primary-color);
+  padding: 20px;
+  background: var(--code-bg);
+  overflow: auto;
+}
+
+.CodeRedesigned {
+  position: relative;
+  border: 1px solic var(--accent-redesigned);
+  padding: 20px;
+  background: var(--light-bg-redesigned);
+  overflow: auto;
+  border-radius: 16px;
+}
+
+.copy_btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.copy_icon path {
+  stroke: var(--primary-color);
+}

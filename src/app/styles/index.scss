@@ -9,11 +9,18 @@ body {
   color: var(--primary-color);
 }
 
-.app,
-.app_drawer {
+.app {
   min-height: 100vh;
   background: var(--bg-color);
   color: var(--primary-color);
+  font: var(--font-m);
+}
+
+.app_redesigned {
+  background: var(--bg-redesigned);
+  min-height: 100vh;
+  font: var(--font-m-redesigned);
+  color: var(--text-redesigned);
 }
 
 .content-page {
@@ -26,10 +33,25 @@ body {
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--card-bg);
+  background: var(--light-bg-redesigned);
 }
 
 *::-webkit-scrollbar-thumb {
+  background-color: var(--icon-redesigned);
+  border-radius: 20px;
+  border: 1px solid var(--accent-redesigned);
+}
+
+.app *::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+
+.app *::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+
+.app *::-webkit-scrollbar-thumb {
   background-color: var(--inverted-secondary-color);
   border-radius: 20px;
   border: 2px solid var(--secondary-color);

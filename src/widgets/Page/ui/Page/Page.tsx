@@ -11,6 +11,7 @@ import { pageActions } from '../../model/slice/pageSlice'
 import { getScrollByPath } from '../../model/selectors/getScrollByPath/getScrollByPath'
 import { TestProps } from '@/shared/types/tests'
 import cls from './Page.module.scss'
+import { toggleFeatures } from '@/shared/lib/features'
 
 interface PageProps extends TestProps {
   className?: string
@@ -26,12 +27,14 @@ export const Page: FC<PageProps> = memo((props) => {
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>
   const dispatch = useAppDispatch()
   const { pathname } = useLocation()
-  const scrollPosition = useSelector((state: StateSchema) =>
-    getScrollByPath(state, pathname)
-  )
+  const scrollPosition = useSelector((state: StateSchema) => getScrollByPath(state, pathname))
 
   useInfiniteScroll({
-    wrapperRef,
+    wrapperRef: toggleFeatures({
+      name: 'isAppRedesigned',
+      on: () => undefined,
+      off: () => wrapperRef
+    }),
     triggerRef,
     callback: onScrollEnd
   })
@@ -52,7 +55,15 @@ export const Page: FC<PageProps> = memo((props) => {
   return (
     <main
       ref={wrapperRef}
-      className={classNames(cls.Page, {}, [className])}
+      className={classNames(
+        toggleFeatures({
+          name: 'isAppRedesigned',
+          on: () => cls.PageRedesigned,
+          off: () => cls.Page
+        }),
+        {},
+        [className]
+      )}
       onScroll={onScroll}
       id={PAGE_ID}
       data-testid={props['data-testid'] ?? 'Page'}

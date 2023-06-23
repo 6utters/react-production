@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { RatingCard } from '@/entities/Rating'
 import { useGetArticleRating, useRateArticle } from '../../api/articleRatingApi'
 import { getAuthData } from '@/entities/User'
-import { Skeleton } from '@/shared/ui/Skeleton'
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton'
 
 export interface ArticleRatingProps {
   className?: string
@@ -64,12 +64,11 @@ const ArticleRating: FC<ArticleRatingProps> = (props) => {
       rate={rating?.rate}
       className={className}
       title={t('Оцените статью')}
-      feedbackTitle={t(
-        'Оставьте свой отзыв о статье, это поможет улучшить качество'
-      )}
+      feedbackTitle={t('Оставьте свой отзыв о статье, это поможет улучшить качество')}
       hasFeedback
     />
   )
 }
 
+// @ts-ignore
 export default memo(ArticleRating)

@@ -50,7 +50,11 @@ module.exports = {
           'gap',
           'border',
           'role',
-          'as'
+          'as',
+          'color',
+          'variant',
+          'size',
+          'wrap'
         ]
       }
     ],
@@ -78,7 +82,7 @@ module.exports = {
         ignoreImportPatterns: ['**/StoreProvider', '**/testing']
       }
     ],
-    'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
+    'react/jsx-max-props-per-line': ['warn', { maximum: 3 }],
     'react/no-unstable-nested-components': 'warn'
   },
   globals: {
