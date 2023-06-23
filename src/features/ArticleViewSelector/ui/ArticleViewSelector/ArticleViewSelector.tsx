@@ -54,6 +54,7 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo((props) =>
             {viewTypes.map((viewType) => (
               <Icon
                 clickable
+                key={viewType.view}
                 onClick={() => onClick(viewType.view)}
                 Svg={viewType.icon}
                 className={classNames('', {
@@ -71,6 +72,7 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo((props) =>
               <IconDeprecated
                 width={24}
                 height={24}
+                key={viewType.view}
                 Svg={viewType.icon}
                 className={classNames(cls.ArticleViewSelector, {
                   [cls.not_selected]: viewType.view !== view

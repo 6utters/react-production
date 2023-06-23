@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC, memo, ReactNode } from 'react'
+import { ButtonHTMLAttributes, FC, ForwardedRef, forwardRef, ReactNode } from 'react'
 import { classNames, Mods } from '@/shared/lib/classNames/classNames'
 import cls from './Button.module.scss'
 
@@ -20,7 +20,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   addonRight?: ReactNode
 }
 
-export const Button: FC<ButtonProps> = memo((props) => {
+export const Button: FC<ButtonProps> = forwardRef((props, ref: ForwardedRef<HTMLButtonElement>) => {
   const {
     className,
     children,
@@ -48,6 +48,7 @@ export const Button: FC<ButtonProps> = memo((props) => {
       disabled={disabled}
       className={classNames(cls.Button, mods, [className, cls[color], cls[variant], cls[size]])}
       {...otherProps}
+      ref={ref}
     >
       <div className={cls.addon_left}>{addonLeft}</div>
       {children}
