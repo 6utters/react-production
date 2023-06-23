@@ -1,4 +1,4 @@
-import { FC, Suspense, useEffect } from 'react'
+import { FC, memo, Suspense, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppRouter } from './providers/router'
@@ -11,8 +11,9 @@ import { ToggleFeatures } from '@/shared/lib/features'
 import { AppLoaderLayout, MainLayout } from '@/shared/layouts'
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme'
 import { useAppToolbar } from './lib/useAppToolbar'
+import { withTheme } from './providers/ThemeProvider/ui/withTheme'
 
-export const App: FC = () => {
+const App: FC = memo(() => {
   const dispatch = useAppDispatch()
   const inited = useSelector(getUserInited)
   const { theme } = useTheme()
@@ -61,4 +62,6 @@ export const App: FC = () => {
       }
     />
   )
-}
+})
+
+export default withTheme(App)
